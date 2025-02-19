@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Combat Mechanics</title>
+</head>
+<body>
+<h1>Combat Mechanics, RPG & TBS Combined</h1>
+<h2>Role-Playing Game Mechanics</h2>
+<h3>Attack Mechanics</h3>
+<ul>
+  <li>Overall, attacking should be much like MMClassic, with a few exceptions: arrow attacks should do more damage
+      thru a combo of might/accuracy effect, buff spells & new hit system (below); and, magic-heavy/exclusive
+      classes should be able to cast a spell as a ranged attack thru a staff or wand.</li>
+  <li>Staff/wand attack: shoots a single-target bolt that deals damage of a selected magic school to the target. Must
+      know magic school to use that type of atk. Levels: Basic - 3 + 1d3 * skill level; Advanced - 5 + 1d3 * 2 *
+      skill level; Expert - 7 + 1d3 * 3 * skill level; Master - 10 + 1d4 * 4 * skill level; Grandmaster - 15 + 1d5 *
+      5 * skill level; SP cost: Basic - 1, Advanced - 2, Expert - 3, Master - 5, GM - 10. Additionally, Master makes
+      Basic attack free & Advanced cost 1, and GM makes Basic/Advanced free, Expert cost 1. Note that Life/Death
+      magic do not have individual resistances, but are simply coded as living things take 100% death dmg & are
+      healed 50% by Life dmg, undead are the inverse. Non-living but not undead (golems, etc.) are immune to both.</li>
+</ul>
+<h3>Hit Rate & Bonus Mechanics</h3>
+<ul>
+  <li>Overall, the hitrate should revolve around a critical-like system of 5 possible hits: very weak, weak, average,
+      strong & very strong.</li>
+  <li>Tentative names: Glancing Blow, Weak Hit, Average Hit, Critical Hit, Slayer Strike</li>
+  <li>Default damage modifiers: 0.25, 0.5, 1.0, 2.0, 4.0</li>
+  <li>Armor Class & Hit Bonus should revolve almost entirely around modifying the chances of which of the 5 occurs,
+      and/or the damage modifiers, rather than manipulation of the underlying damage formula. Same goes for Magic
+      Resistances.</li>
+  <li>For physical attacks, the calculation should be calculated based on the ratio of attacker's Hit Bonus with
+      the defender's AC, on a -4 to +4 scale. Tentatively, -4 means AC 400% greater than Hit Bonus, -3 means AC
+      300% greater than Hit Bonus, +4 means Hit Bonus 400% greater than AC, etc. At 0, all 5 hit possibilities are
+      open. At +1, worst possibility disappears & chances grow for better ones. At +2, the next weakest possibility
+      disappears leaving Average as the worst-case scenario, with Critical being the most likely. At +3, Average is
+      totally ruled out, leaving only Critical or Slayer Strike as options, on a sliding scale that tilts towards
+      Slayer the further towards +4. At +4 & above, Slayer Strike is guaranteed. The reverse happens with symmetrical
+      chances for negative values.</li>
+  <li>The hit modifier should be multiplicative & occur after the weapon damage is calculated, along with any
+      ele weakness/armor skill/etc. modifiers.</li>
+</ul>
+<h2>Turn-Based Game Mechanics</h2>
+<p>All combat mechanics such as turn structure, speed calculations, etc. should be copied wholesale from classic except
+   where noted.</p>
+<h3>Morale</h3>
+<ul>
+  <li>Same -3 to +3 scale as H3C generally (GM Leadership opens up +4, GM Demoralize opens up -4), but two positive
+      & 2 negative outcomes, rather than just 1 of each. Also, Master Leadership/Demoralization effects cancel out,
+      but GM effects override Master.</li>
+  <li>Positive: Minor - extra movement hexes for the unit this turn. Rolls for & is triggered at unit turn start,
+      indicated in info box with some visual cue (e.g. [7]) to indicate the one-turn nature of the effect. Major -
+      Extra turn for the unit. Only diff between this & classic H3 is the indication of the roll at the start of
+      the unit's turn.</li>
+  <li>Negative: Minor - reduced movement hexes for the turn. Same indication/roll as Positive outcomes. Major - Fully
+      lost turn like H3C.</li>
+</ul>
+<h3>Luck</h3>
+<ul>
+  <li>Like Morale, same +-3 scale as H3C except for GM Luck/Intimidation giving +-4, but positive & negative
+      outcomes follow the same 5-outcome system as the RPG. Also, Master Luck/Intimidation effects cancel out,
+      but GM effects override Master.</li>
+  <li>The Luck Factor that determines what outcome occurs is based on the attacking unit's luck minus the defending
+      unit's luck. Possible ranges are from -8 to +8: 0 means every hit is an Average Hit. +1 opens up possibility of
+      Critical. +3 opens up possibility of Slayer. +5 guarantees Critical, +7 guarantees Slayer, +8 increases Slayer
+      mod. The reverse is symmetrically true.</li>
+</ul>
+<h3>Ranged Units</h3>
+<ul>
+  <li>Ranged attacks should suffer a distance penalty (e.g. -25% dmg for firing >10 hexes away), and additionally
+      shooting over castle walls should downgrade a hit one category (e.g. an Average Hit should become a Weak Hit)
+      unless skills prevent it.</li>
+</ul>
+</body>
+</html>

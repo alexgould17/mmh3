@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Skill & Stat Mechanics</title>
+</head>
+<body>
+<h1>Skill & Statistic Mechanics</h1>
+<h2>Role-Playing Game Mechanics</h2>
+<h3>Primary Stats</h3>
+<h4>Thresholds</h4>
+<p>Soft floor is 0, soft ceiling is 500. Anything above that is padding against temp reduction. General Thresholds
+   for learning/upgrading skills: Basic - 20 stat / Advanced - 30 stat & 4 lvl / Expert - 50 stat & 7 lvl /
+   Master - 150 (main) or 100 (aux) stat & 10 lvl / Grandmaster - 250 (main) or 150 (aux) stat & 15 lvl.</p>
+<table>
+  <tr><th>Old +-</th><th>Old Val</th><th>New +-</th><th>New Val</th></tr>
+  <tr><td>-6</td><td>0</td><td>n/a</td><td>n/a</td></tr>
+  <tr><td>-5</td><td>3</td><td>n/a</td><td>n/a</td></tr>
+  <tr><td>-4</td><td>5</td><td>-5</td><td>0</td></tr>
+  <tr><td>-3</td><td>7</td><td>-3</td><td>5</td></tr>
+  <tr><td>-2</td><td>9</td><td>-2</td><td>10</td></tr>
+  <tr><td>-1</td><td>11</td><td>-1</td><td>15</td></tr>
+  <tr><td>0</td><td>13</td><td>0</td><td>20</td></tr>
+  <tr><td>1</td><td>15</td><td>1</td><td>25</td></tr>
+  <tr><td>2</td><td>17</td><td>2</td><td>30</td></tr>
+  <tr><td>3</td><td>19</td><td>3</td><td>35</td></tr>
+  <tr><td>4</td><td>21</td><td>4</td><td>40</td></tr>
+  <tr><td>5</td><td>25</td><td>5</td><td>45</td></tr>
+  <tr><td>6</td><td>30</td><td>6</td><td>50</td></tr>
+  <tr><td>7</td><td>35</td><td>10</td><td>60</td></tr>
+  <tr><td>8</td><td>40</td><td>15</td><td>70</td></tr>
+  <tr><td>9</td><td>50</td><td>20</td><td>80</td></tr>
+  <tr><td>10</td><td>75</td><td>25</td><td>90</td></tr>
+  <tr><td>11</td><td>100</td><td>30</td><td>100</td></tr>
+  <tr><td>12</td><td>125</td><td>50</td><td>125</td></tr>
+  <tr><td>13</td><td>150</td><td>70</td><td>150</td></tr>
+  <tr><td>14</td><td>175</td><td>90</td><td>175</td></tr>
+  <tr><td>15</td><td>200</td><td>110</td><td>200</td></tr>
+  <tr><td>16</td><td>225</td><td>130</td><td>225</td></tr>
+  <tr><td>17</td><td>250</td><td>150</td><td>250</td></tr>
+  <tr><td>18</td><td>275</td><td>200</td><td>300</td></tr>
+  <tr><td>19</td><td>300</td><td>250</td><td>350</td></tr>
+  <tr><td>20</td><td>350</td><td>300</td><td>400</td></tr>
+  <tr><td>25</td><td>400</td><td>400</td><td>450</td></tr>
+  <tr><td>30</td><td>500</td><td>500</td><td>500</td></tr>
+</table>
+<ul>
+  <li>Might - Physical strength. Affects physical atk dmg, what weapons melee can be equipped & </li>
+  <li>Endurance - Physical stamina. Affects hit points, what armor can be equipped & </li>
+  <li>Speed - Quickness in performing any tasks. Affects party movement speed & all recovery times.</li>
+  <li>Accuracy - Precision in performing any tasks. Affects physical hit chance, what bow can be equipped.</li>
+  <li>Intellect - Competency in thinking. Affects spell points & elemental magical prowess.</li>
+  <li>Personality - Personal charm. Affects self magical prowess & enemy dispensation.</li>
+  <li>Luck - Affects everything but especially Critical Hits</li>
+</ul>
+<h2>Secondary Skills</h2>
+<ul>
+  <li>In general, any secondary skill can be learned by any class & is only restricted by stats, with a few
+      exceptions (e.g. Necromancers can't learn Life Magic)</li>
+  <li>Rather than basing derived stats (like hp & sp) and their growth on chosen class, they should be managed
+      almost exclusively thru primary stats, with those growing accordingly. A notable exception would be spell
+      effects, e.g. temporary hit rate reduction due to being cursed.</li>
+  <li>Races should have small but noticeable effects on primary stats at character creation but should taper off in
+      favor of chosen path-based growth.</li>
+</ul>
+<h3>List of Secondary Skills</h3>
+<h4>Weapon Skills</h4>
+<ul>
+  <li>Axe - Stats: Mgt main / End aux</li>
+  <li>Blaster - Acc aux (lowest bar to entry)</li>
+  <li>Bow - Acc main / Spd main</li>
+  <li>Dagger - Spd main / Acc aux</li>
+  <li>Mace - Mgt main / End aux</li>
+  <li>Spear - Mgt main / Acc main</li>
+  <li>Staff - Acc main / Spd aux</li>
+  <li>Sword - Mgt main / Spd main</li>
+  <li>Unarmed - Mgt main / End main</li>
+  <li>Armsmaster - Spd main / Mgt aux</li>
+</ul>
+<h4>Armor Skills</h4>
+<ul>
+  <li>Leather - End aux / Spd aux (dual aux for low bar to entry)</li>
+  <li>Chain - End main / Spd aux</li>
+  <li>Plate - End main / Mgt aux</li>
+  <li>Dodging - Spd main / Lck aux</li>
+  <li>Shield - End main / Mgt main (reduce to 100ea for Master/200ea for GM)</li>
+</ul>
+<h4>Magic Skills</h4>
+<ul>
+  <li>Air - Int main / Acc aux</li>
+  <li>Earth - Int main / End aux</li>
+  <li>Fire - Int main / Spd aux</li>
+  <li>Water - Int main / Per aux</li>
+  <li>Body - Per main / End aux</li>
+  <li>Mind - Per main / Int aux</li>
+  <li>Spirit - Per main / Acc</li>
+  <li>Life - Int/Per ONLY, scaling: Basic-50, Adv-100, Exp-150, Mas-250, GM-400</li>
+  <li>Death - Int/Per ONLY, scaling: Basic-50, Adv-100, Exp-150, Mas-250, GM-400</li>
+</ul>
+<h4>Miscellaneous Skills</h4>
+<ul>
+  <li>Alchemy - Int main / Acc aux</li>
+  <li>Body Building - End main / Mgt aux</li>
+  <li>Disarm Trap - Acc main / Lck aux</li>
+  <li>ID Item - Int main / Lck aux</li>
+  <li>ID Monster - Acc main / Lck aux</li>
+  <li>Learning - Int aux / Acc aux (dual aux for low bar to entry)</li>
+  <li>Meditation - Int main / Per aux (switchable)</li>
+  <li>Merchant - Per ONLY, scaling: Basic-30, Adv-50, Exp-100, Mas-200, GM-300</li>
+  <li>Perception - Acc main / Lck aux</li>
+  <li>Regeneration - End main / Lck aux</li>
+  <li>Repair Item - Mgt main / Lck aux</li>
+</ul>
+<h2>Turn-Based Game Mechanics</h2>
+<h3>Primary Skills</h3>
+<ul>
+  <li>Attack (largely works the same as H3C)</li>
+  <li>Defense (largely works the same as H3C)</li>
+  <li>Spell Power (largely works the same as H3C)</li>
+  <li>Knowledge (somewhat different)</li>
+</ul>
+<h3>Secondary Skills</h3>
+<ul>
+  <li>Will now scale as Basic - Advanced - Expert - Master - Grandmaster to be cohesive with RPG</li>
+  <li>Basic must be learned at a castle in the appropriate building, at an adventure map scholar (think H3C Witch Hut)
+      or can be spec'd into on-the-fly if hero's home castle/specialty allows it (there will be some lore about the hero
+      travelling with scholars to fulfill this).</li>
+  <li>Battle skills get learned at Blacksmith, Magic skills get learned at Mage Guilds & Other get learned at
+      Marketplace.</li>
+  <li>No more RNG-based secondary skills. Experience, level & primary skills (Atk/Def for Battle, Pwr/Knw for
+      Magic) will determine how many secondary skills & to what proficiency a hero can learn.</li>
+  <li>Generally, Grandmastery of skills should not be able to be learned from the castle, but from an outside
+      scholar. Each castle should have 1-2 available, thematically appropriate, once a Metropolis is built.</li>
+  <li>Level 1 Heroes should start with 3 skills thematically appropriate to their type, e.g. Death Knights should
+      have Death Magic along with 2 battle skills.</li>
+</ul>
+<h4>Battle</h4>
+<ul>
+  <li>Archery: Basic - +10% dmg to all ranged atks; Advanced - +20% dmg to all ranged atks; Expert - +30% dmg to
+      all ranged atks, eliminate distance penalty; Master - +50% dmg to all ranged atks, also eliminate castle wall
+      penalty; Grandmaster - +50% dmg to all ranged atks, guaranteed Critical Hit, ranged units can shoot from
+      point-blank range</li>
+  <li>Armorer: Basic - 5% all incoming dmg reduction; Advanced - 10% all incoming dmg reduction; Expert - 15% all
+      incoming dmg reduction; Master - 20% all incoming dmg reduction. Last level 1-4 creature on a stack will
+      survive a lethal hit 1 time per round; Grandmaster - 30% all incoming damage reduction. Last creature of any
+      level will survive a lethal hit once per round. Example: gnolls have 5hp per unit. if they take a 13 damage
+      hit, normally 2 will die. Master/GM Armorer will allow only 1 to die from that 1 hit (unless it's the last of
+      a stack & enough damage was done to kill a theoretical extra in the stack, so e.g. a stack of only 2 gnolls
+      won't survive 15 or more damage)</li>
+  <li>Artillery: Basic - Gives control of the ballista & defense towers to the hero; Advanced - Ballista shoots twice
+      & ballista/towers have a 50% chance of a Critical Hit + a 12.5% chance of a Slayer Strike; Expert - Ballista &
+      towers guaranteed Critical; Master - Keep tower shoots twice, 25% chance of Slayer Strike; Grandmaster - All
+      towers shoot twice, guaranteed Slayer Strike</li>
+  <li>Ballistics: Basic - Allows hero to aim catapult at specific section of wall, 1dmg gt'd; Advanced - Allows hero
+      to aim at drawbridge, 2dmg 50%; Expert - Allows hero to aim at outer towers, 2dmg gt'd; Master - 2 shots, 3dmg
+      50%; Grandmaster - Allows hero to aim at Keep, 3dmg gt'd.</li>
+  <li>Demoralization: Basic - -1 enemy morale; Advanced - -2 enemy morale; Expert - -3 enemy morale; Master - enemy
+      morale has -1 ceiling (does not override troop abilities), +1 bonus to self troop morale; Grandmaster - enemy
+      morale has -2 ceiling (DOES override troop abilities), unlocks +-4 morale ceiling for self & enemy
+      respectively.</li>
+  <li>First Aid: Basic - Heals up to 50hp on a single stack every turn, Hero has control of tent; Advanced - Fully
+      heals a stack every turn; Expert - Fully heals up to 2 stacks every turn; Master - Fully heals up to 3 stacks
+      every turn; Grandmaster - Fully heals all stacks every turn. Additionally, provides a weak resurrection to a
+      single stack after healing.</li>
+  <li>Intimidation: Basic - -1 enemy luck; Advanced - -2 enemy luck; Expert - -3 enemy luck; Master - enemy luck has
+      -1 ceiling (does not override troop abilities), +1 bonus to self troop luck; Grandmaster - enemy luck has -2
+      ceiling (DOES override troop abilities), unlocks +-4 luck ceiling for self & enemy respectively.</li>
+  <li>Leadership: Basic - +1 self morale; Advanced - +2 self morale; Expert - +3 self morale; Master - self
+      morale has +1 floor, -1 bonus to enemy troop morale, all troops of same alignment can be used with same-castle
+      bonus, eliminates penalty for up to 2 alignments & 3 castle types; Grandmaster - self morale has +2 floor, -2
+      enemy morale unlocks +-4 morale ceiling for self & enemy, -2 enemy morale, completely eliminates alignment/castle
+      type penalties.</li>
+  <li>Luck: Basic - +1 self luck; +2 self luck; Expert - +3 self luck; Master - self luck has +1 floor, -1 bonus to
+      enemy troop luck, bonus to Critical modifier; Grandmaster - self luck has +2 floor, bonus to Critical & Slayer
+      Strike modifiers unlocks +-4 luck ceiling for self & enemy respectively .</li>
+  <li>Offense: Basic - +10% melee dmg; Advanced - +20% melee dmg; Expert - +30% melee dmg; Master - +40% melee dmg,
+      Average Hit floor; Grandmaster - +50% melee dmg, Critical Hit floor.</li>
+  <li>Tactics: Basic - Rearrange troops in 3-hex zone pre-combat; Advanced - 5-hex zone; Expert - 7-hex zone; Master
+      - 9-hex zone. Guarantees 3-hex zone no matter the tactics of the opponent; Grandmaster - 11-hex zone. 5-hex
+      guarantee. May cast 1 spell or fire 1 round of siege/artillery at any time prior to combat. When 2 masters or
+      above of Tactics face off, each troop will be able to be moved exactly 1 time, alternating
+      offense-defense-defense-offense. Troop order will be chosen by heroes, with GM being able to elect to use
+      spell/artillery in place of a troop choice at any time.</li>
+</ul>
+<h4>Magic</h4>
+<ul>
+  <li>Air Magic - varies per spell</li>
+  <li>Earth Magic - varies per spell</li>
+  <li>Fire Magic - varies per spell</li>
+  <li>Water Magic - varies per spell</li>
+  <li>Body Magic (new to TBS) - varies per spell</li>
+  <li>Mind Magic (new to TBS) - varies per spell</li>
+  <li>Spirit Magic (new to TBS) - varies per spell</li>
+  <li>Life Magic (new to TBS, formerly "Light Magic" in RPG) - varies per spell</li>
+  <li>Death Magic (new to TBS, absorbs "Necromancy", formerly "Dark Magic" in RPG - varies per spell</li>
+  <li>Eagle Eye: Basic - 100% chance to learn any Basic spell cast, 50% chance to learn any Advanced; Advanced - 100%
+      chance to learn any Advanced spell cast, 50% Expert; Expert - 100% chance to learn any Expert spell cast, 25%
+      Master; Master - 100% chance to learn any Master spell cast, 10% chance to counter any spell (cannot learn a
+      countered spell); Grandmaster - 25% chance to counter any spell cast. For all levels: cannot learn a spell
+      from a magic discipline not already learned.</li>
+  <li>Intelligence: Basic - 50% bonus to spell points; Advanced - 100% bonus to spell points; Expert - 200% bonus to
+      spell points; Master - 300% bonus to spell points, 25% reduced casting cost for all spells; Grandmaster -
+      400% bonus to spell points, 50% reduced spell cost, can cast limited spells an additional time per turn.</li>
+  <li>Mysticism: Basic - +50% sp regen/day; Advanced - +100% sp regen/day; Expert - +150% sp regen/day; Master -
+      +250% sp regen/day. Immune to mana drain/absorption/dampening; Grandmaster - +400% sp regen/day.
+      Regenerate the cost of the first cast spell after every battle. When garrisoned, regenerate spell points
+      instantly after every siege in a town with a mage guild.</li>
+  <li>Resistance: Basic - +10% to all magic resistances for all troops; Advanced - +20% all resistances; Expert -
+      +30% all resistances; Master - +50% all resistances. 10% chance for immunity to an enemy spell (rolled per
+      stack individually at cast time); Grandmaster - +75% all resistances. 20% chance for magic mirror reflection
+      of an enemy spell (rolled same as Master resist).</li>
+  <li>Scholar: Basic - Teach any Basic or Advanced spells to another hero; Advanced - Teach Expert Spells; Expert -
+      Teach Master spells; Master - Reduce knowledge requirement by 2 for taught spells, can teach basic spells to a
+      hero that doesn't know that magic discipline; Grandmaster - Eliminate knowledge requirement for taught spells.
+      Can teach up to advanced spells to a hero that does not know a magic discipline.</li>
+  <li>Sorcery: Basic - +10% dmg to direct damage spells; Advanced - +20% DD dmg; Expert - +30% DD dmg; Master - +50%
+      DD dmg. -10% DD dmg taken by own troops; Grandmaster - +100% DD dmg. 25% DD dmg reduction to own troops.</li>
+  <li><s>Wisdom</s> (absorbed into the knowledge stat)</li>
+</ul>
+<h4>Other</h4>
+<ul>
+  <li>Diplomacy: Basic - Weaker monster groups more likely to join, 20% reduced surrender cost, -2 level to Library
+      of Enlightenment; Advanced - Weaker monster groups far more likely to join, -30% surrender cost, -4 Library level
+      Expert - Even-strength monsters more likely to join, Weaker gt'd join unless maplocked out -40% surrender cost,
+      -6 Library level; Master - Even-strength monsters far more likely to join, Weaker gt'd flee (overrides no-flee
+      map settings) Stronger monsters will consider joining you. -60% surrender cost;
+      Grandmaster - Stronger monsters will strongly consider joining you. Even-strength gt'd join or flee (flee
+      overrides no-flee map settings). -90% surrender cost.</li>
+  <li>Estates: Basic - +125 gold/day; Advanced - +250 gold/day; Expert - +500 gold/day; Master - +1000 gold/day;
+      Grandmaster - +200o gold/day & +1 of the castle's 7th lvl creature resource/day (e.g. Castle is +1 gem/day).
+      Based on the hero who has the skill's faction.</li>
+  <li>Learning: Basic - 10% exp bonus; Advanced - 20% exp bonus; Expert - 30% exp bonus; Master - 50% exp bonus;
+      Grandmaster - 100% exp bonus.</li>
+  <li>Logistics: Basic - +10% movement over land; Advanced - +20% overland movement; Expert - +30% overland movement;
+      Master - +40% overland movement, +2 bonus to slowest creature penalty; Grandmaster - +50% overland movement
+      bonus, slowest creature penalty eliminated, 20% bonus from movement point increasers (e.g. stables)</li>
+  <li>Navigation: Basic - +50% movement by boat; Advanced - +100% boat movement; Expert - +150% boat movement; Master
+      - +200% boat movement. Troops unaffected by whirlpools; Grandmaster - +300% boat movement. Movement points
+      transfer between land & boat.</li>
+  <li>Pathfinding: Basic - 25% terrain penalty reduction; Advanced - 50% reduction; Expert - 75% reduction; Master -
+      terrain penalty eliminated. 10% bonus on neutral terrain; Grandmaster - 25% neutral terrain bonus. Additional
+      +25% bonus on native terrain when all troops have same native terrain. Bonuses stack linearly with Logistics.</li>
+  <li>Scouting: Basic - +1 hex sight radius; Advanced - +2 hex; Expert - +3 hex; Master - +4 hex. Can see exact troop
+      numbers in current range; Grandmaster - +6 hex radius. Once a week, can backtrack hero after movement points
+      exhausted to day's starting position.</li>
+</ul>
+</body>
+</html>

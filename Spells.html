@@ -270,7 +270,7 @@
        artifacts, etc.) from a 3hex distance. High cost, 1*day (TBS); Mas - Med cost (both) med cd (RPG)/2*day (TBS);
        GM - 0 cost (both) low cd (RPG)/3*day (TBS)</li>
    <li>Psychic Shock</li>
-   <li>Exp - 10+(5-1)5*lvl (RPG)/20+(10-20)*lvl (TBS) 20% chance Sanity1 (both); Mas - 12+(8-17)*lvl
+   <li>Exp - 10+(5-15)5*lvl (RPG)/20+(10-20)*lvl (TBS) 20% chance Sanity1 (both); Mas - 12+(8-17)*lvl
        (RPG)/20+(12-25)*lvl (TBS) 40/20% Sanity1/2 chance (both); GM - 15+(10-20)*lvl (RPG)/30+(15-25)*lvl (TBS)
        50/30/20% Sanity1/2/3 chance (both)</li>
    <li>Berserk</li>
@@ -291,48 +291,77 @@
        (both); Adv - 15+3%*lvl; Exp - 20+5%*lvl; Mas - Affects either all allies (both) or vision cone aoe enemies
        (RPG)/all enemies (TBS); GM - 25+5%. Affects all allies & enemies. All levels: 10min*lvl (RPG)/1turn per
        mastery (TBS)</li>
-   <li>Detect Life</li>
-   <li>Bas - ; Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Precision</li>
+   <li>Bas - For ranged attacks, Bonus to Hit Chance,1hr*lvl (RPG) eliminates range penalty 1turn*pwr (TBS); Adv -
+       Bonus Crit Chance (both); Exp - Affects all ; Mas - Strong bonus to Crit, slight bonus to Slayer% (both)
+       Eliminates castle wall penalty (TBS); GM - Guaranteed Crit, strong bonus to Slayer% (both)</li>
    <li>Spirit Resistance</li>
    <li>Bas - 10+1%/lvl to res. 1hr/lvl; Adv - 15+2%/lvl to res; Exp - 20+3%/lvl to res; Mas - 40+4%; GM - 100% floor.
        Skill lasts until rest/area change/etc.</li>
    <li><strong>Advanced Level</strong></li>
    <li><em>Free:</em> Bless</li>
-   <li>Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Adv - Target unit does max damage from its damage range, cures Curse1 1hr*lvl/1turn*pwr (both); Exp - Applies to
+       whole army/party (both); Mas - 10% over max, cures Curse2 (both); GM - 25% over max, cures Curse3, semi-perm
+       (both)</li>
    <li>Heroism</li>
-   <li>Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Adv - 10+2% bonus spirit dmg*lvl/pwr to target unit's physical attacks, 1hr*lvl/1turn*pwr (both); Exp - Affects
+       all (both); Mas - 15+3% (both); GM - 25+5%, Semi-perm</li>
    <li>Curse</li>
-   <li>Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Target unit does min damage from its damage range, cures Bless1, 1hr*lvl/1turn*pwr (both); Exp - Applies to whole
+       army/party (both); Mas - 20% under min, cures Bless2 (both); GM - 50% under min, cures Bless3 Semi-perm (both).
+       Bless/Curse all levels: will fail to counterract Curse/Bless if higher level. e.g. if attacking hero casts
+       Mas Bless on his army, defending hero cannot cast Adv or Exp Curse to any effect.</li>
    <li><strong>Expert Level</strong></li>
    <li><em>Free:</em> Spirit Lash</li>
-   <li>Exp - ; Mas - ; GM - </li>
+   <li>Exp - 10+(10-12)*lvl, short range only (RPG)/20+(15-20)*lvl must be on hero's half of battlefield (TBS); Mas -
+       12+(12-15)*lvl (RPG)/20+(18-25)*lvl (TBS); GM - 20+(15-20)*lvl (RPG)/40+(20-30)*lvl (TBS)</li>
    <li>Preservation</li>
-   <li>Exp - ; Mas - ; GM - </li>
-   <li>Protection from Magic (name?)</li>
-   <li>Exp - ; Mas - ; GM - </li>
+   <li>Exp - Prevents target chara from dying for 10*lvl more hp 1hr*lvl (RPG) Prevents the first single week's base
+       growth worth of creatures in the stack from dying once per cast, leaving them at 1hp <strong>each</strong>,
+       unless  twice their hp's worth of damage is done. Example: 1 stack of 15 Pikemen at 10hp each, 14 is 1 week's
+       growth.  Can take 14*10+14*9 (266) hp without any 1 unit in the stack dying. Each of the next 14dmg all battle
+       (unless  healed) kills 1 Pikeman each. so 267 kills 1, 268 kills 2, etc. to 280. 290 kills whole stack since
+       15th not preserved; Mas - Double saving effect (both); GM - Affects entire party/army (both)</li>
+   <li>Protection from Status (name?)</li>
+   <li>Exp - Protects target unit against any lvl1/2 status condition, 1hr*lvl/1pwr*turn (both); Mas - All status
+       conditions (both); GM - Affects entire party (both)</li>
    <li><strong>Master Level</strong></li>
    <li><em>Free:</em> Raise Dead</li>
-   <li>Mas - ; GM - </li>
+   <li>Mas - Raises target unit from the dead with 50+25*lvl hp. very high cost, very long cooldown. Target's body
+       must be intact (not eradicated), having Mas Body Magic on the char casting this spell allows for resurrecting
+       eradicated units (RPG)/Restores 100+50*lvl hp to a stack, resurrecting any fallen units 1hp after each
+       previous one gets full hp (see H3C Res); GM - Restores to full hp, shorter cooldown (RPG)/250+100*lvl (TBS)</li>
 </ul>
 <h3>Life Magic (formerly "Light")</h3>
 <ul>
    <li><strong>Basic Level</strong></li>
    <li><em>Free:</em> Life Burst (new, small Life dmg/heal)</li>
-   <li>Bas - ; Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Bas - (2-3)*lvl heal to living unit, 2*that as dmg to undead unit, no affect on unliving (RPG)/(5-10)*pwr heal
+       (TBS); Adv - (3-4)*lvl (RPG)/(7-12)*pwr (TBS); Exp - (4-6)*lvl (RPG)/(8-15)*pwr (TBS); Mas - (5-8)*lvl
+       (RPG)/(10-18)*pwr (TBS); GM - (7-12)*lvl (RPG)/(12-25)*pwr (TBS)</li>
    <li>Turn Undead</li>
-   <li>Bas - ; Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Bas - Inflicts Fear2 on single undead stack 3min*lvl/1turn(both); Adv - Fear3 (both) ; Exp - 5min*lvl
+       (RPG)/2turn (TBS); Mas - 10min*lvl (RPG)/3turn (TBS); GM - Small vision aoe (RPG)/1hex (TBS)</li>
    <li>Multiply Food (formerly "Create Food")</li>
-   <li>Bas - ; Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Bas - Create max(5, current food) more food; Adv - max(10, cur*2); Exp - max(15, cur*3); Mas - max(25, cur*5);
+       GM - max(50, cur*10). All RPG for now. Will see if something can be done for TBS. Initial thoughts: adding
+       food mechanic seems burdensome, ignoring spell or replacing seems to defeat cohesiveness (though ignoring is
+       better I think), maybe gives a small bonus to movepoints for the next X days?</li>
    <li>Cure Fatigue (formerly "Cure Weakness")</li>
-   <li>Bas - ; Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Bas - Cures Fatigue1 if inflicted for 10min*lvl &lt; time (RPG)/Cures Fatigue1 (TBS); Adv - Cures Fatigue2; Exp
+       - Cures Fatigue3; Mas - Cures whole party/army; GM - 0 cost. Prevents fatigue Semi-perm.</li>
    <li><strong>Advanced Level</strong></li>
    <li><em>Free:</em> Animate (new, similar to Reanimate for undead from living, but makes a golem from nonliving)</li>
-   <li>Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Adv - Creates a Dendroid or Stone Gargoyle, max 1 animated creature in party's control at a time per char with
+       this level of Life Magic. High sp cost/long CD (RPG)/Creates 1 basic week's worth of Stone Gargoyles, 1
+       cast/week (TBS) ; Exp - Can create Stone Golems (both); Mas - Can create Gold Golems (both) 2 max units (RPG) 2
+       basic week's worth (TBS); GM - Can create Crystal Golems (both) 3 max units (RPG) 3 basic week's worth (TBS)</li>
    <li>Mass Resistance (name?, formerly "Day of Protection")</li>
    <li>Adv - 15+2%/lvl to all res; Exp - 20+3%; Mas - 40+4%; GM - 50%+5% (over 100% negates any adverse). 50% floor.
        Skill lasts until rest/area change/etc.</li>
    <li>Destroy Undead</li>
-   <li>Adv - ;Exp - ; Mas - ; GM - </li>
+   <li>Adv - Deals 10*lvl dmg to target undead unit (RPG)/20*pwr (TBS); Exp - 20*lvl (RPG)/40*lvl (TBS); Mas - Small
+       vision aoe (RPG)/1hex aoe (TBS); GM - Hits all enemies (both)</li>
    <li><strong>Expert Level</strong></li>
    <li><em>Free:</em> Guardian Angel (prevents death by leaving charas hp at 1 min for certain amount of time)</li>
    <li>Exp - ; Mas - ; GM - </li>

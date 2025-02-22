@@ -14,15 +14,21 @@
 			should be biggest & multi-level on all types. Capitol should either be a custom image or more ornate version of
 			Metropolis in same style (e.g. for Castle, lots of ornate, gilded accents. for Inferno, more glowy brimstone)
 			.</li>
-	<li>Town requires only Tavern still, City should require basic Mage Guild, Blacksmith (which will be a single
-			combined building representing arms & armor sales/repair/etc., to be cohesive with MM), and Marketplace
+	<li>Town requires only Tavern still, City should require basic Mage Guild, Blacksmith Guild (which will be a single
+			combined building representing arms & armor sales/repair/etc., to be cohesive with MM), and Merchant's Guild
 			(which will be a set of shops representing alchemist, magician & bank, to be cohesive with MM). Metropolis
 			requires Castle still.</li>
 	<li>Upgrading to Metropolis should upgrade the troops garrisoned in the towers. In towns with 2+ troops (Castle,
 			Tower, Stronghold, Conflux, Necropolis & Dungeon), just replace the lowest shooter with the highest one (e.g.
 			Orcs -> Cyclopses) & double the damage. In Rampart, Elves -> Grand Elves and consequently shoot twice. In
-			Fortress, 2 more wall garrisons (for a total of 4) + a 2nd Lizard Archer in the keep for double damage. <s>In
-			Inferno, Gogs -> Magogs improving damage to 1.5x & giving 1 hex fireball ring.</s></li>
+			Fortress, 2 more wall garrisons (for a total of 4) + a 2nd Lizard Archer in the keep for double damage. In
+			Inferno, Gogs -> Magogs improving damage to 1.5x & giving 1 hex fireball ring.</li>
+	<li>Grail & related mechanics replaced with new "Ultimate Structure" unique to every town type, can only be
+			constructed after the rest of the town is fully built & costs a ton. Start with grail structures as base for
+			all towns' Ultimates.</li>
+	<li>Each town should have a shipyard -> lighthouse enabled if bordering water</li>
+	<li>Each town should have 4 unique structures on top of town, defensive, creature dwellings & ults: 2 horde
+			buildings (one lvl1-3, one lvl4-5), and 2 other.</li>
 	<li>Technical: allow for disabling certain structures while enabling the rest of the tech tree to be built.
 			Essentially, allow e.g. a Mage Guild to be bypassed for a magic-less scenario (think Dragon Slayer map 4) but
 			still allow for a City Hall to be built.</li>
@@ -47,33 +53,94 @@
 <h2>Castle Creature Alignments, Buildings & Unique Features</h2>
 <h3>Castle</h3>
 <h4>General Info</h4>
+<ul>
+	<li>Alignment: "Life"</li>
+	<li>Magic Affiliations:+Life,Spirit / -Death</li>
+	<li><em>Updates:</em> Res silo should now produce +1gem/day instead of 1wd/1ore, Swordsmen are now lvl3, Griffins
+	    lvl4</li>
+	<li>Ultimate: War Memorial (name?) - +2 morale to all allied Castle-native heroes, +1 to all other allied heroes.
+			Opens door for +4 morale at Mas Leadership instead of GM.</li>
+	<li><strong>Uniques</strong></li>
+	<li>Beer Hall: +6 Pikemen/wk, requires Tavern, 500gd</li>
+	<li>Griffin Bastion: +3 Griffins/wk, requires Griffin Tower, 1000gd+5ore</li>
+	<li>Stables: +400 movepts to visiting hero for 1wk, 2000gd+10wd, requires Barracks & Town Hall</li>
+	<li>Quarry Guild: up to +2 ore from ore pits/day (+1 per ore pit per quarry guild, each ore pit can be boosted
+			to a max of 4/day), 2000gd+5ore</li>
+	<li><strong>Dwellings</strong></li>
+	<li>Guardhouse: 250g+5o/1000g+5o, requires Fort</li>
+	<li>Archers' Tower: 500g5w5o/1000g5w5o, requires Guardhouse</li>
+	<li>Barracks: 1000g5o/1500g5o, requires Blacksmith Guild & Guardhouse</li>
+	<li>Griffin Tower: 2000g5o/1500g5c5o, requires Barracks</li>
+	<li>Monastery: 3000g5w5o/1000g2c2g2m2s2w2o, requires Barracks, Archers' Tower & Bas Mage Guild</li>
+	<li>Jousting Arena: 5000g10w/3000g10w, requires Stables, Monastery & Griffin Tower</li>
+	<li>Portal of Glory: 20000g10c10g10m10s/20000g10c10g10m10s, requires Monastery & Jousting Arena, upg. requires
+			upg. Monastery</li>
+</ul>
 <h4>Creatures</h4>
 <ol>
-	<li>Pikemen</li>
-	<li>Archers</li>
-	<li>Swordsmen (moved down)</li>
-	<li>Griffins (moved up)</li>
-	<li>Monks (punch for melee, no melee penalty, special ranged attack that does extra against the undead)</li>
-	<li>Cavaliers</li>
-	<li>Angels</li>
+	<li>Pikemen/Halberdiers (immune to Cav jousting bonus)</li>
+	<li>Archers/Marksmen (ranged, 12 shots (+12 for upg.), upg. shoots twice per turn)</li>
+	<li>Swordsmen/Veteran Swordsmen (+morale gives +1 luck (on upg, +3 or more morale gives +2 luck))</li>
+	<li>Griffins/Battle Griffins (flying, 3 retaliations (unlimited for upg.))</li>
+	<li>Monks/Zealots (ranged, 24 shots, punch for melee, no melee penalty, ranged attack does extra against the
+			undead)</li>
+	<li>Cavaliers/Hussars (jousting bonus)</li>
+	<li>Angels/Archangels (flying, hates devils, morale+1 (upg. casts res once per combat, Mas lv, pwr=stack #))</li>
 </ol>
 <h3>Rampart</h3>
 <h4>General Info</h4>
+<ul>
+	<li>Alignment: "Life"</li>
+	<li>Magic Affiliations: +Earth, Mind / -Body</li>
+	<li><em>Updates:</em> Dendroids way down to 2, Dwarves to 4 & Pegasi to 5.</li>
+	<li>Ultimate: Spirit Guardian - +2 Luck to all native allied heroes, +1 to other allied heroes. Raises luck cap
+			to +4 at Mas Luck instead of GM.</li>
+	<li><strong>Uniques</strong></li>
+	<li>Centaur Paddock: +6/wk Centaur growth, requires Centaur Stables, 500g5w</li>
+	<li>Dwarven Bunks: +3/wk Dwarf growth, requires Dwarf Cottage, Blacksmith Guild, 1000g5o</li>
+	<li>Timber Guild: up to +2 wood from lumber mills/day (+1 per lumber mill per Timber Guild, each lumber mill can be
+			boosted to a max of 4/day), 2000g+5w</li>
+	<li>Precious Stockpile: +10% interest on selected resource at the start of the week, must be chosen before day 7,
+	    5000g3c3g3s3m5o5w</li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
 <h4>Creatures</h4>
 <ol>
-	<li>Centaur Lancers</li>
-	<li>Dendroids (moved way down, Animated, but still Living. Basic has slowing roots, Upgraded has binding roots)</li>
-	<li>Elven Archers</li>
-	<li>Dwarven Warriors (moved up significantly, better speed/dmg/stats needed)</li>
-	<li>Pegasus Riders (spear-wielding lancers instead of scimitar-wielding swordsppl, strike & return for upgraded)</li>
-	<li>Unicorns</li>
-	<li>Dragons (Green/Gold)</li>
+	<li>Centaur Lancers/Centaur Gallopers(?)</li>
+	<li>Dendroid Sentries/Dendroid Soldiers (Animated, Living, slowing roots)</li>
+	<li>Elf Archers/Elf Rangers (ranged, 24 shots, upg. shoots 2x per turn)</li>
+	<li>Dwarven Warriors (ranged attacks/spells downgraded 1 Crit category (2 when defensive stance taken))</li>
+	<li>Pegasus Fencers/Pegasus Cuirassiers (magic damping, upg. has strike-and-return (alt))</li>
+	<li>Unicorns/War Unicorns (aura of magic resist to army, chance to Pacify1 on atk (upg. Pacify2))</li>
+	<li>Green Dragons/Gold Dragons (Flying, breath atk (alt), high magic resistance (upg. very high))</li>
 </ol>
 <h3>Tower</h3>
 <h4>General Info</h4>
 <ul>
-	<li>Towers get gremlins first, then magi on Metropolis/Fortification (instead of wall strength for latter).
-			Having both fortification & Metropolis + Titan dwelling grants Titan garrison.</li>
+	<li>Alignment: "Good"</li>
+	<li>Magic Affiliations: +Air, Water / -Earth</li>
+	<li><em>Updates:</em> </li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
 </ul>
 <h4>Creatures</h4>
 <ol>
@@ -87,6 +154,25 @@
 </ol>
 <h3>Stronghold</h3>
 <h4>General Info</h4>
+<ul>
+	<li>Alignment: "Nature"</li>
+	<li>Magic Affiliations: +Fire, Spirit / -Air</li>
+	<li><em>Updates:</em> </li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
 <h4>Creatures</h4>
 <ol>
 	<li>Goblin Infantry</li>
@@ -94,11 +180,30 @@
 	<li>Goblin Wolf Riders (moved up)</li>
 	<li>Ogres (spec into either warriors or magi)</li>
 	<li>Rocs</li>
-	<li>Cyclops Demolishers (name?)</li>
+	<li>Cyclopses</li>
 	<li>Behemoths</li>
 </ol>
 <h3>Fortress</h3>
 <h4>General Info</h4>
+<ul>
+	<li>Alignment: "Nature"</li>
+	<li>Magic Affiliations: +Earth, Water / -Fire</li>
+	<li><em>Updates:</em> </li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
 <h4>Creatures</h4>
 <ol>
 	<li>Gnolls</li>
@@ -112,8 +217,23 @@
 <h3>Conflux</h3>
 <h4>General Info</h4>
 <ul>
-	<li>Should be the most flexible castle, aside from Sprites, should have choices from each plane</li>
-	<li>Mage guild should have affinity for all four elemental schools but be held back in lifedeath</li>
+	<li>Alignment: "Nature"</li>
+	<li>Magic Affiliations: +Air, Earth, Fire, Water / -Life, Death</li>
+	<li><em>Updates:</em> </li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
 	<li>Extra bonus to morale (on top of general alignment bonus) for only having troops of the same plane (must be 3
 	or more present to activate, does not activate for sprites)</li>
 </ul>
@@ -137,6 +257,25 @@
 </ol>
 <h3>Inferno</h3>
 <h4>General Info</h4>
+<ul>
+	<li>Alignment: "Death"</li>
+	<li>Magic Affiliations: +Fire, Body / -Water</li>
+	<li><em>Updates:</em> </li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
 <h4>Creatures</h4>
 <ol>
 	<li>Imps</li>
@@ -144,18 +283,34 @@
 	<li>Hell Hounds (Cerberi upgrade: regular atk - all 3 heads atk same target, damage increase, no
 			retaliation; alt atk - 3-headed, each one strikes a different hex for full base damage, but each attacked
 			target can retaliate)</li>
-	<li>Demon Infantry (name?, should be cohesive design with MM Kreegans)</li>
-	<li>Demon Flyers (name, new, ranged should be cohesive design with MM Kreegans)</li>
+	<li>Demon Grunts</li>
+	<li>Minion Devils</li>
 	<li>Pit Lords (moved up, rework: should be stronger, faster ground unit whose presence gives bonuses to all lower
-	Inferno troops. Upgraded should still have resurrect, inferno only, lower troops only, raise back as stack they
+	    Inferno troops. Upgraded should still have resurrect, inferno only, lower troops only, raise back as stack they
 			are, not always demons)</li>
-	<li>Devils (redo art to be consistent with MM Kreegans, maybe rework name to be also "Demon" something?)</li>
+	<li>Devils (redo art to be consistent with MM Kreegans)</li>
 </ol>
 <h3>Necropolis</h3>
 <h4>General Info</h4>
 <ul>
-	<li>Alignment - "Evil"</li>
-	<li>Skeleton Archers replace Liches in towers congruent with their addition as lowest-level shooters</li>
+	<li>Alignment - "Death"</li>
+	<li>Magic Affiliations: +Spirit, Death / -Life</li>
+	<li><em>Updates:</em> Dread Knights out (too similar to the hero class), Zombies-Liches promoted 1lvl each,
+												Skeleton Archers added at Lvl2. Huge changes to necromancy (see Death Magic)</li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
 </ul>
 <h4>Creatures</h4>
 <ol>
@@ -169,6 +324,25 @@
 </ol>
 <h3>Dungeon</h3>
 <h4>General Info</h4>
+<ul>
+	<li>Alignment: "Death"</li>
+	<li>Magic Affiliations: +Air, Mind / -Spirit</li>
+	<li><em>Updates:</em> </li>
+	<li>Ultimate: </li>
+	<li><strong>Uniques</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li><strong>Dwellings</strong></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+</ul>
 <h4>Creatures</h4>
 <p>Still working on reordering these, but I thiiink this is it</p>
 <ol>

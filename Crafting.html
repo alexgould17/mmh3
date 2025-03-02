@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crafting System</title>
+</head>
+<body>
+<h1>Unified Crafting, Repair & Enchanting System Mechanics</h1>
+<p>In general, we don't want players to be making things (excluding potions). We want them to take already-made
+   suits of armor, weapons, etc. and repair them, upgrade them with rarer components & set their preferred
+   enchantments on them. For now, this will mostly focus on the RPG side of things, as I don't think crafting in
+   general is a mechanic I'd want to add to the TBS, though eventually the relics & artifacts should be cohesive
+   between the two.</p>
+<p>In MMC, the repair was a very binary system: things were either broken or not, and you could either fix them with
+   a single button press mid-battle with no materials, or you couldn't fix them at all unless you paid someone to do
+   it. I think a 0-100 scale of broken-to-working perfectly would be better, as well as needing a dedicated place to
+   repair things along with some raw materials (see materials section), somewhat similar to how Fallout manages
+   repairs (4 would be the prime example here).</p>
+<h2>Armor & Weapons</h2>
+<h3>Armor</h3>
+<p>Rather than having the breast/chest be considered the "armor" from a skill standpoint & everything else be
+   wearable no matter what, all armor will be divided into 4 different bodyparts: head (helmet, hat, etc.), core
+   (breastplate, leather chestpiece, etc.), arms (gauntlets & gloves), and legs (boots). Arms & legs always in pairs.
+   Further, each equipment  item shall fall into one of the 3 armor categories (leather, chain, plate), and the
+   associated skill will be required to equip them (this will be partially mitigated by every chara having an armor
+   skill by design, even dodging classes, see skill section for more detail). Also, materials will be required to
+   repair any significant damage in armor: specifically, the leather(s)/metal(s) the armor is made of. Leather core
+   pieces will be equippable underneath chain/plate core pieces for added protection & recovery penalty.</p>
+<p>Each piece of armor will be able to have 0-3 enchantments based on the repair status & the material quality of
+   the base armor, and each enchantment will fall into 1 of 3 categories: damage reduction, regeneration & speed.
+   Damage reduction enchantments will bolster the AC or magic resistance of the wearer, regeneration will boost
+   the hp or sp regen of the wearer, and speed will provide a recovery time reduction (or, more rarely, penalty) to
+   the wearer.</p>
+<h3>Weapons</h3>
+<p>Weapons, like armor, will generally not be forged wholesale from ores but rather obtained in made fashion & then
+   repaired & enchanted by the player. Like armor, each weapon will be able to carry 0-3 enchantments based on the
+   underlying quality of the weapon & its repair status (e.g. think starting longsword from MM8C can carry 0, but
+   Archangel Broadsword can carry 3). Weapon enchantments will fall into 3 categories: magical damage, skill &
+   special. Magical damage (non-magic weapons only, i.e. excludes staves/wands) will add a bonus magical damage in
+   the selected school of magic. Skill will increase the weapon skill (non-magic weapons) or magic school skill
+   (magic weapons) of the wielder. Special is reserved for things like swift, lifedrain, etc. Enchantments should all
+   be hot swappable if costing a bit of resources to redo.</p>
+<h2>Wands & Staves</h2>
+<p>Wands & Staves should be used in place of any other weapon for All-Magic classes (i.e. they should be barred from
+   wielding any other weapons) & should be available to be used as weapons (providing ranged magic damage in a school
+   known to the wielder at the cost of small amounts of sp per attack) for any class with magical prowess (i.e.
+   All-Might heroes are barred from it, even ones like Paladin that can opt to learn magic, but all others can use if
+   desired) .</p>
+<p>3 basic components: Bulk material (wood, metal, etc.; helps channel the magic, different materials offer different
+   effects for attacks), magical core (top-tier alchemical reagent, elemental shard, etc.; helps provide the power,
+   each one has a different effect.), and focusing lens (gem or glass, provides directed output for attacks. this
+   part is optional for the most basic of staves, e.g. the wooden staff from MM7C, but those will not provide any
+   ability to channel magical attacks, they are simply blunt objects to hit people with, e.g. for a monk). Unlike
+   weapons & armor, these will be able to be (& encouraged to be) built from scratch, probably as part of the
+   "promotion" quest to the particular class/job. The bulk material & magical core should not be able to be hot
+   swappable, though the bulk material should be able to be salvaged to some degree when scrapping an old/broken
+   item, but the focusing lens should be hot swappable. e.g. you build a basic wooden staff with a phoenix feather
+   core & zircon lens, but then later find a diamond, you can pop the zircon out & put the diamond in for no cost
+   except the gem.</p>
+<h2>Alchemy & Potions</h2>
+<h3>Old Potions (7C & 8C)</h3>
+<ul>
+  <li><strong>Simple</strong></li>
+  <li>Red - Cure Wounds</li>
+  <li>Blue - Magic</li>
+  <li>Yellow - Cure Weakness</li>
+  <li>Gray - Catalyst</li>
+  <li><strong>Complex</strong></li>
+  <li>Green - Awaken - B+Y</li>
+  <li>Purple - Cure Poison - B+R</li>
+  <li>Orange - Cure Disease - R+Y</li>
+  <li><strong>Compound</strong></li>
+  <li>Haste - R+O</li>
+  <li>Heroism - R+P</li>
+  <li>Bless - R+G</li>
+  <li>Preservation - B+O</li>
+  <li>Shield - B+P</li>
+  <li>Recharge Item - B+G</li>
+  <li>Stone Skin - Y+O</li>
+  <li>Water Breathing - Y+P</li>
+  <li>Harden Item - Y+G</li>
+  <li>Remove Fear - O+P</li>
+  <li>Remove Curse - P+G</li>
+  <li>Cure Insanity - O+G</li>
+  <li><strong>White</strong></li>
+  <li>Might Boost - P+Heroism</li>
+  <li>Int Boost - G+Harden</li>
+  <li>Per Boost - G+Recharge</li>
+  <li>End Boost - P+Shield</li>
+  <li>Spd Boost - O+Haste</li>
+  <li>Acc Boost - O+StSkin</li>
+  <li>Lck Boost - Shield+Heroism</li>
+  <li>Flaming</li>
+  <li>Freezing</li>
+  <li>Noxious</li>
+  <li>Shocking</li>
+  <li>Swift</li>
+  <li>Cure Para</li>
+  <li>Divine Restoration (cures all status but stone/dead/erad)</li>
+  <li>Divine Cure (5xPwr restore hp)</li>
+  <li>Divine Power (5xPwr to sp)</li>
+  <li>Fire Resist</li>
+  <li>Air Resist</li>
+  <li>Water Resist</li>
+  <li>Earth Resist</li>
+  <li>Mind Resist</li>
+  <li>Body Resist</li>
+  <li><strong>Black</strong></li>
+  <li>Stone to Flesh</li>
+  <li>Slaying</li>
+  <li>Pure Might</li>
+  <li>Pure Int</li>
+  <li>Pure Per</li>
+  <li>Pure End</li>
+  <li>Pure Speed</li>
+  <li>Pure Acc</li>
+  <li>Pure Luck</li>
+  <li>Rejuvenation</li>
+</ul>
+<h3>New Potions</h3>
+<p>Later</p>
+<h2>Raw Materials</h2>
+<h3>Ores</h3>
+<ul>
+  <li>Bulk: Iron, Aluminum</li>
+  <li>Common: Copper, Siertal, Phylt, Tin (?)</li>
+  <li>Uncommon: Kergar, Silver</li>
+  <li>Rare: Erudine, Gold</li>
+  <li>Paramount: Stalt, Platinum</li>
+</ul>
+<h3>Woods (New)</h3>
+<p>Will matter to the construction of staves & wands. Will be obtainable from trees in certain locations, with
+   common wood being available anywhere-ish, but rare woods being questable/guarded by high-level monsters.</p>
+<h3>Leathers (New)</h3>
+<p>Obtainable from dead beasts, different beast leather will have different properties. Necessary for repairing
+   leather armor.</p>
+<h3>Potion Reagents</h3>
+<p>All should fit into a single inventory space.</p>
+<ul>
+  <li>1pwr: Red - Widowseep Berries; Blue - Phirna Root; Yellow - Poppysnap/Pods; Gray - Mushrooms</li>
+  <li>5pwr: Red - Crushed Rose Petals/Wolf's Eye; Blue - Meteorite Fragment; Yellow - Thornbark/Fae Dust; Gray -
+      Obsidian</li>
+  <li>10pwr: Red - Troll Blood/Gog Blood; Blue - Harpy Feather/Wisp Heart; Yellow - Sulfur; Gray - Ooze
+      Endoplasm/Wasp Wing</li>
+  <li>20pwr: Red - Ruby; Blue - Moonstone/Datura; Yellow - Garnet; Gray - Mercury</li>
+  <li>50pwr: Red - Dragon Eye/Phoenix Feather; Blue - Dragon Turtle Fang/Elvish Toadstool; Yellow - Unicorn
+      Horn/Devil Ichor; Gray - Philosopher's Stone (75)</li>
+</ul>
+<h3>Gems</h3>
+<h4>Old (8 - 7)</h4>
+<ul>
+  <li>Zircon - Quartz</li>
+  <li>Iolite - Topaz</li>
+  <li>Citrine - Rose Crystal</li>
+  <li>Amber - Yellow Topaz</li>
+  <li>Amethyst - Green Garnet</li>
+  <li>Topaz - Sapphire</li>
+  <li>Emerald - Amethyst</li>
+  <li>Sapphire - Emerald</li>
+  <li>Ruby</li>
+  <li>Diamond</li>
+  <li>(6 additionally has Moonstone & a few others, will add them as I see them.)</li>
+</ul>
+</body>
+</html>

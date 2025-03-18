@@ -7,28 +7,39 @@
 <body>
 <h1>Status Conditions & Their Effects</h1>
 <h2>Table of Status Conditions</h2>
-<p>Considering taking out "Sanity" condition altogether for Sanism reasons. Fear & Pacification may be enough for mind
-   already.</p>
 <p>Chances of inflicting a status are rolled on a per-event basis unless a more serious status than can be inflicted
    already exists on the receiving party. Rolling a status of the same level that's already been inflicted refreshes
-   the duration. % chances are meant to be cumulative out of a total of 100%. So e.g. if creature A has a 20/30/50%
-   chance of inflicting Poison1/2/3 for 3 turns on an attack, then it is guaranteed to inflict a poison status
-   (20+30+50==100%). If Creature B already has Poison2 with 1 turn left, then there's a 50% chance nothing will
-   happen (rolling Poison1 will neither override nor refresh the duration of Poison2), 30% chance of Creature B
-   having its Poison2 status extended to last 3 more turns (Poison2 roll refreshes duration), and a 20% chance
-   Creature B will be upgraded to Poison3 for 3 turns (TBS example).</p>
+   the duration. % chances are rolled separately, starting with the highest possible status. So e.g. if creature A
+   has a 100/40/20% chance of inflicting Poison1/2/3 for 3 turns on an attack, then Poison3 gets rolled first. If the
+   20% chance doesn't hit, Poison2 will be rolled. If that 40% chance doesn't hit, Poison1 will be guaranteed to
+   succeed. If Creature B already has Poison2 with 1 turn left, then there's a 20% chance Creature B will be upgraded
+   to Poison3 for 3 turns, a 32% chance (40% of the remaining 80%) of Poison2 being refreshed for 3 turns & 48%
+   chance (100% - 32% - 20%) of nothing happening (Poison1 will neither refresh the duration of, nor override
+   (TBS example) .</p>
+<p>Additionally, resistance/weakness to the element associated with a status will lower/increase the chance of
+   receiving that status from an enemy attack, with immunity to an element preventing it entirely (e.g. an Air
+   Elemental, which has immunity to Air damage, is also immune to all forms of Shock, because it is associated with
+   Air).</p>
 <table>
   <tr><th>Base Name</th><th>Associated Magic</th><th>Level 1 Wording</th><th>Level 2 Wording</th>
-      <th>Level 3 Wording</th></tr>
-  <tr><td>Shock</td><td>Air</td><td>Zapped</td><td>Shocked</td><td>Electrified</td></tr>
-  <tr><td>Stun</td><td>Earth</td><td>Stunned</td><td>Bashed (?)</td><td>Immobilized</td></tr>
-  <tr><td>Sight</td><td>Fire</td><td>Sight Obscured</td><td>Sight Impaired</td><td>Sight Eliminated (?)</td></tr>
-  <tr><td>Poison</td><td>Water</td><td>Slightly Poisoned</td><td>Strongly Poisoned</td><td>Envenomed</td></tr>
-  <tr><td>Disease</td><td>Body</td><td>Sick</td><td>Ill</td><td>Diseased</td></tr>
-  <tr><td>Fear</td><td>Mind</td><td>Afraid</td><td>Intimidated</td><td>Terrified</td></tr>
-  <tr><td>Curse</td><td>Spirit</td><td>Jinxed</td><td>Cursed</td><td>Hexed</td></tr>
-  <tr><td>Fatigue</td><td>Life/Death</td><td>Weary</td><td>Fatigued</td><td>Completely Drained</td></tr>
-  <tr><td>Turn to Stone</td><td>Earth</td><td>n/a</td><td>n/a</td><td>Turned to Stone</td></tr>
+      <th>Level 3 Wording</th><th>L1 Effect</th><th>L2 Effect</th><th>L3 Effect</th></tr>
+  <tr><td>Shock</td><td>Air</td><td>Zapped</td><td>Shocked</td><td>Electrified</td>
+      <td>25% Attack Speed slow</td><td>50%</td><td>100%</td></tr>
+  <tr><td>Stun</td><td>Earth</td><td>Stunned</td><td>Immobilized</td><td>Turned to Stone</td>
+      <td>50% Move Speed slow</td><td>100% (can't move)</td><td>Can't move/attack/cast spells, but immune to
+                                                                Phys dmg</td></tr>
+  <tr><td>Burn</td><td>Fire</td><td>Singed</td><td>Burned</td><td>Charred</td>
+      <td>10% AS slow, 20% MS slow</td><td>20%/40%</td><td>40%/80%</td></tr>
+  <tr><td>Poison</td><td>Water</td><td>Slightly Poisoned</td><td>Strongly Poisoned</td><td>Envenomed</td>
+      <td>Small DoT to current hp</td><td>Med DoT</td><td>Large DoT</td></tr>
+  <tr><td>Disease</td><td>Body</td><td>Sick</td><td>Ill</td><td>Diseased</td>
+      <td>Small hit to current max HP</td><td>Med hit</td><td>Large hit</td></tr>
+  <tr><td>Fear</td><td>Mind</td><td>Afraid</td><td>Intimidated</td><td>Terrified</td>
+      <td>25% chance to fail phys melee atk</td><td>50%</td><td>100%</td></tr>
+  <tr><td>Curse</td><td>Spirit</td><td>Jinxed</td><td>Cursed</td><td>Hexed</td>
+      <td>25% chance to fail spell/ranged atk</td><td>50%</td><td>100%</td></tr>
+  <tr><td>Fatigue</td><td>Life/Death</td><td>Weary</td><td>Fatigued</td><td>Completely Drained</td>
+      <td>25% reduction to all stats</td><td>50%</td><td>90%</td></tr>
 </table>
 </body>
 </html>

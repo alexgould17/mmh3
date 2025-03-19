@@ -26,6 +26,7 @@
    Enormous.</p>
 <p>Cast cost as well I think should have standard enumerations but flexibility in allowing any realistic non-negative
    int value to be input. Standard enums: None (0) Minimal, Small, Medium, Large, Huge, Gigantic, Tremendous.</p>
+<p>4/5ths cast cost algorithm (int cost, int num_targets): return ((4*num_targets + 1) // 5) * cost</p>
 <p>Magic resistance slides on a scale from -100% to 100%, hardcapped on both ends. 100% <em>resistance</em> is a +4
    to defense on the combat scale (gt'd glancing blow), -100% is -4 to defense. 75% +3 etc. Immunities will be
    exceedingly rare & coded separately, but nullify all damage of a particular type.</p>
@@ -280,146 +281,186 @@ living units killed by fire magic cannot be resurrected as undead.</p>
       then disappears.</li>
 </ul>
 <h3>Body Magic</h3>
+<p>Body is concerned with healing, enhancing, and sometimes destroying the physical form: that is to say, the body.
+   By far the best school for healing.</p>
 <ul>
    <li><strong>Basic Level</strong></li>
-   <li><em>Free:</em> Heal</li>
-   <li>Bas - 5+3*lvl hp restored to 1 chara (RPG)/5+5*pwr hp restored to one stack (TBS); Adv - 10+5*lvl
-       (RPG)/10+10*pwr (TBS); Exp - 15+7*lvl (RPG)/Fully heals any stack (TBS); Mas - Heals whole party (# charas -
-       1) * base sp cost (RPG)/Heals all stacks 1/1/2/3/4/5/5*sp cost for 1/2/3/4/5/6/7 stacks healed (TBS)
-       Mechanically, should attempt every heal individually in smallest remaining hp % order to allow for partial
-       casts at low sp; GM - 25+10*lvl (RPG)/Free autocast at end of turn, does not require a cast to be available
-       still (TBS).</li>
-   <li>Harm</li>
-   <li>Bas - 5+2*lvl dmg (RPG)/10+5*lvl dmg (TBS); Adv - 10+3*lvl (RPG)/20+7*lvl (TBS); Exp - 10+5*lvl
-       (RPG)/20+10*lvl (TBS); Mas - 20+7*lvl (RPG)/30+15*lvl (TBS); GM - 30+10*lvl (RPG)/50+20*lvl (TBS)</li>
-   <li>Stun</li>
-   <li>Bas - Applies Stun1 to a lvl1-3 creature (both); Adv - lvl 1-5 (both) ; Exp - Stun2 lvl1-3, Stun1 lvl1-6 (both);
-       Mas - Stun2 lvl1-5, Stun1 any level (both); GM - Stun3 lvl1-5, Stun2 lvl6-7, Stun1 higher</li>
-   <li>Body Resistance</li>
+   <li>Heal Wounds - Heal - <em>free</em></li>
+   <li>Bas - Single target, Weak dmg heal, None range, Standard CD, Small cost. (both); Adv - Medium dmg heal (both);
+       Exp - Short CD (both); Mas - Strong dmg heal (both); GM - Minimal CD (both)</li>
+   <li>Harm - DD - <em>free</em></li>
+   <li>Bas - Single target, Weak dmg, None range, Standard CD, Small cost. (both); Adv - Medium dmg (both); Exp -
+       Short CD (both); Mas - Trivial cost (both); GM - Strong dmg (both)</li>
+   <li>Disease - Status</li>
+   <li>Bas - 100% chance of Disease1 to target creature, Medium cost, Long CD (both); Adv - 100%/50% Disease1/2 (both);
+       Exp - 100%/100%/25% Disease1/2/3 (both); Mas - 200%/200%/100% Disease1/2/3 (both); GM - 200% Disease3,
+       Standard CD (both)</li>
+   <li>Body Resistance - Status</li>
    <li>Bas - 10+1%/lvl to res. 1hr/lvl; Adv - 15+2%/lvl to res; Exp - 20+3%/lvl to res; Mas - 40+4%; GM - 100% floor.
-       Skill lasts until rest/area change/etc.</li>
+       Semi-perm, All levels: Medium cost, Standard CD (both)</li>
    <li><strong>Advanced Level</strong></li>
-   <li><em>Free:</em> Cure Poison</li>
-   <li>Adv - Cure Poison1 for any char/stack (both), <10min*lvl (RPG); Exp - Cure Poison2 (both); Mas - 1hr*lvl (RPG),
-       cures Poison3 (both); GM - Affects whole party/army, gives poison immunity for 1hr*lvl (RPG) 1turn*pwr (TBS)</li>
-   <li>Cure Disease</li>
-   <li>Adv - Cures Disease1 on single unit (both); Exp - cures Disease2; Mas - cures Disease3, 1hr*lvl; GM - cures all
-       party/army, prevents for 1hr*lvl/1turn*pwr</li>
-   <li>Poison Touch (new, replaces Hammerhands)</li>
-   <li>Adv - +5 body dmg/phys hit (enchants a single weapon, 10min*lvl), 10% Poison1 chance (RPG)/+10% dmg & 20%
-       Poison1 chance (TBS); Exp - 10dmg/hit, 20/5% Poison1/2 (RPG)/+20%dmg & 40/10% Poison1/2 chance; Mas -
-       15dmg/hit, 30/10/5% Poison1/2/3 chance (RPG)/+35%dmg & 50/20/10% Poison1/2/3 chance (TBS); GM -25dmg/hit,
-       50/25/10% Poison1/2/3 chance (RPG)/+50%dmg & 25/50/25% Poison1/2/3 chance (TBS).</li>
+   <li>Heal Disease - Heal - <em>free</em></li>
+   <li>Adv - Heals target of Disease1, Medium cost, Standard CD (both); Exp - Heals Disease2 (both) - Heals Disease3,
+       Short CD (both); GM - Affects whole party/army at once (both)</li>
+   <li>Regeneration - Buff</li>
+   <li>Adv - Adds Small amt to target character's hp regen, 1hr*lvl, Medium cost (RPG)/Top troop of target lvl 1-3
+       stack heals fully at the end of each round, 1turn*pwr, Large cost (TBS), Long CD (both); Exp - Affects entire
+       party at once (RPG)/lvl 1-5 stack (TBS); Mas - Medium amt (RPG)/Any lvl stack (TBS); GM - Large amt, Standard CD
+       (RPG)/Affects entire army (TBS)</li>
+   <li>Hammerhands - Buff</li>
+   <li>Adv - Adds Small Body dmg to every unarmed attack by target (RPG)/Eliminates melee penalty for a ranged unit
+       attacking as melee (new animation?) (TBS) None range, Large cost, Standard CD (both); Exp - Affects all
+       allies (both); Mas - Medium dmg per hit (both); GM - 25% bonus to all melee weapon attacks (both)</li>
    <li><strong>Expert Level</strong></li>
-   <li><em>Free:</em> Regeneration</li>
-   <li>Exp - Adds 15hp/hr to character's regen, 1hr*lvl (RPG)/lvl1-5 fully heals at end of every turn,
-       1turn*pwr(TBS); Mas - 30hp/hr (RPG)/lvl1-7 (TBS); GM - 50hp/hr, affects whole party, chara-1 *sp cost
-       (RPG)/Any level, full party (TBS)</li>
-   <li>Flying Fist</li>
-   <li>Exp - 25+10*lvl (RPG)/50+15*lvl (TBS); Mas - 30+12*lvl (RPG)/60+18*lvl (TBS) ; GM - 50+15*lvl (RPG)/100+20*lvl
-       (TBS)</li>
-   <li>Disease (new)</li>
-   <li>Exp - Inflicts Disease1 on a creature/stack; Mas - Disease2; GM - Disease3, small vision cone (TPG)/1hex aoe
-       (TBS)</li>
+   <li>Mass Heal - Heal - <em>free</em></li>
+   <li>Exp - Cast Exp Heal Wounds on all allies for 4/5ths cost, Long CD (both); Mas - Mas Heal Wounds (both); GM -
+       GM Heal Wounds, Standard CD (both)</li>
+   <li>Flying Fist - DD</li>
+   <li>Exp - Strong dmg to single target, None range, Huge cost, Long CD (both); Mas - Massive dmg (both); GM -
+       Standard CD</li>
+   <li>Plague - Status</li>
+   <li>Exp - 100% chance Disease1 to all enemies in vision cone AoE, Huge cost, Very Long CD (both); Mas -
+       150%/100% Disease1/2 (both); GM - 200%/150%/100% Disease1/2/3 (both)</li>
    <li><strong>Master Level</strong></li>
-   <li><em>Free:</em> Restoration (formerly partially "Power Cure")</li>
-   <li>Mas - 20+10*lvl hp heal to whole party (RPG) fully heals whole army (TBS) removes any 1st-level condition
-       (both); GM - 30+15*lvl hp (RPG) resurrects up to 1 basic weeks' worth of troops (or 20%, whichever is less)
-       (TBS) cures any Status2 (both)</li>
+  <li>Deformation - Debuff - <em>free</em></li>
+  <li>Mas - For 10min (RPG)/1 turn (TBS), prevents non-dead units in a small AoE (RPG)/1-hex AoE (TBS) from either
+      attacking, walking, or flying, chosen at cast time. Alternatively, can be cast on dead bodies of the formerly
+      living (4th option at cast time) to eradicate the bodies, preventing resurrection to the living unless Restoration
+      is cast first, and <strong>permanently</strong> preventing reanimation as the undead. Gigantic cost, Very Long CD
+      (both); GM - Vision cone AoE (both)</li>
+   <li>Restoration - Heal</li>
+   <li>Mas - Restores a body that's been eradicated or deformed to its prior state. Gigantic cost, Enormous CD
+       (both); GM -  Huge cost, Very Long CD (both).</li>
 </ul>
 <h3>Mind Magic</h3>
+<p>Mind's strength is in manipulation: creating fear, exerting one's will over another, and sometimes even moving
+   physical objects! Strong debuffing school.</p>
 <ul>
    <li><strong>Basic Level</strong></li>
-   <li><em>Free:</em> Mind Blast</li>
-   <li>Bas - Shoot rotating skull, 1d4*lvl dmg (RPG)/5d2*power dmg (TBS); Adv - 1d5*lvl (RPG)/5d3*pwr (TBS); Exp -
-       1d6*lvl (RPG)/5d4*pwr (TBS); Mas - 7+1d7*lvl (RPG)/10+5d6*pwr (TBS); GM - 10+1d10*lvl (RPG)/20+5d8*lvl (TBS)</li>
-   <li>Remove Fear</li>
-   <li>Bas - Cures Fear1 from single target (both), 10*lvl min (RPG); Adv - Cures Fear2; Exp - Cures Fear3; Mas -
-       1hr*lvl (RPG)/0 cost (TBS), affects all (both); GM - 0 cost/near instant CD (RPG)/First cast does not count as
-       turn's spell, +second with GM Int (TBS)</li>
-   <li>Telepathy</li>
-   <li>Spell version of ID Monster, all levels match precisely. 10min*lvl Bas-Exp, 1hr*lvl Mas, Semi-perm GM (RPG)
-       /Not sure what to do yet for TBS.</li>
-   <li>Mind Resistance</li>
+   <li>Mind Blast - DD/Status (Mas+ only) - <em>free</em></li>
+   <li>Bas - Single target, Weak dmg, Medium range, Standard CD, Small cost. (both); Adv - Medium dmg; Exp -
+       Short CD; Mas - 20% chance Fear1; GM - Strong dmg</li>
+  <li>Telepathy - Buff - <em>free</em></li>
+  <li>Bas - Bringing up the info box (e.g. by holding right-click) shows all gold an enemy has, Medium cost, Standard
+      CD (both) 1hr*lvl (RPG)/1turn (TBS); Adv - Shows all loot (RPG)/Shows all resources (TBS); Exp - Shows
+      detailed damage & resistance calculations (both); Mas - Small cost, Short CD (both); GM - No cost,
+      permanently on without casting, undispellable buff (both) Hero needs to be in range for effects to work,
+      casting either in-battle or outside carries over to the other for the rest of the day (TBS).</li>
+   <li>Fear - Status</li>
+   <li>Bas - 100% chance of Fear1 to target creature, Medium cost, Long CD (both); Adv - 100%/50% Fear1/2 (both);Exp
+       - 100%/100%/25% Fear1/2/3 (both); Mas - 200%/200%/100% Fear1/2/3 (both); GM - 200% Fear3, Standard CD (both)</li>
+   <li>Mind Resistance - Buff</li>
    <li>Bas - 10+1%/lvl to res. 1hr/lvl; Adv - 15+2%/lvl to res; Exp - 20+3%/lvl to res; Mas - 40+4%; GM - 100% floor.
-       Skill lasts until rest/area change/etc.</li>
+       Semi-perm, All levels: Medium cost, Standard CD (both).</li>
    <li><strong>Advanced Level</strong></li>
-   <li><em>Free:</em> Fear</li>
-   <li>Adv - Inflicts Fear1, 5min*lvl (RPG)/1turn*pwr (TBS); Exp - Fear2; Mas - Fear3; GM - Small aoe (RPG)/1hex aoe
-       (TBS)</li>
-   <li>Pacify (formerly "Charm")</li>
-   <li>Adv - Inflicts Pacify1, 5min*lvl (RPG)/1turn*pwr (TBS); Exp - Pacify2; Mas - Pacify3; GM - Small aoe (RPG)/1hex
-       aoe (TBS) </li>
-   <li>Restore Sanity (formerly "Cure Insanity")</li>
-   <li>Adv - Cures Sanity1 (both), 10min*lvl (RPG); Exp - Cures Sanity2; Mas - Cures Sanity3, 1hr*lvl (RPG); GM -
-       Cures all party/army, chara - 1*sp</li>
+   <li>Heal Fear - Heal - <em>free</em></li>
+   <li>Adv - Heals target of Fear1, Medium cost, Standard CD (both); Exp - Heals Fear2 (both) - Heals Fear3,
+       Short CD (both); GM - Affects whole party/army at once (both)</li>
+   <li>Pacify (formerly "Charm") - Status</li>
+   <li>Adv - Targets an enemy & calms it with 100% base accuracy, making it unwilling to attack the caster & their
+       allies for 10min (RPG) /1turn (TBS), or until it is attacked, debuffed, or interacted with in any negative way
+       (stealing, etc.) lvl1-3, Large cost, Long CD (both); Exp - lvl1-5 (both); Mas - any lvl, 200% accuracy (both);
+       GM - 2x duration, hostility does not break the pacification (both).</li>
+   <li>Enrage (formerly "Berserk") - Status</li>
+   <li>Adv - Target lvl1-3 creature loses its sense of alliance for 10min (RPG)/1turn (TBS) & atks nearest creature
+       for duration (prioritizes caster's enemies in tie), Large cost, Long CD (both); Exp - lvl1-5 (both) Mas - any
+       lvl (both); GM - Small AoE (RPG)/1-hex AoE (TBS)</li>
    <li><strong>Expert Level</strong></li>
-   <li><em>Free:</em> Telekinesis</li>
-   <li>Exp - Interact with map objects from any distance. High cost/long cd (RPG)/Pickup map objects (resources,
-       artifacts, etc.) from a 3hex distance. High cost, 1*day (TBS); Mas - Med cost (both) med cd (RPG)/2*day (TBS);
-       GM - 0 cost (both) low cd (RPG)/3*day (TBS)</li>
-   <li>Psychic Shock</li>
-   <li>Exp - 10+(5-15)5*lvl (RPG)/20+(10-20)*lvl (TBS) 20% chance Sanity1 (both); Mas - 12+(8-17)*lvl
-       (RPG)/20+(12-25)*lvl (TBS) 40/20% Sanity1/2 chance (both); GM - 15+(10-20)*lvl (RPG)/30+(15-25)*lvl (TBS)
-       50/30/20% Sanity1/2/3 chance (both)</li>
-   <li>Berserk</li>
-   <li>Exp - Lvl1-5 creature, atks nearest creature (prioritizes caster's enemy in tie) (both), 5min*lvl (RPG)/1turn
-       (TBS); Mas - Lvl1-7 (both); GM - Small aoe (RPG)/1hex aoe (TBS)</li>
+   <li>Telekinesis - Travel (kind of) - <em>free</em></li>
+   <li>Exp - Interact with map objects from long distances as long as they can be seen (RPG)/Pickup
+       map objects (resources, etc.) within vision distance (TBS). High cost, Very Long CD 1(both); Mas - Long CD
+       (both); GM - Medium cost, Standard CD (both)</li>
+   <li>Psychic Shock - DD/Status</li>
+   <li>Exp - Massive dmg to single target, Medium range, Huge cost, Long CD, 100%/50% Fear1/2 (both); Mas -
+       200%/100%/50% Fear1/2/3 (both); GM - 200%/200%/100% Fear1/2/3, Standard CD (both)</li>
+   <li>Hypnotize (from H3C air but takes place of MMC "Enslave") - Debuff</li>
+   <li>Exp - Can temporarily command target enemy unit for 10min (RPG) 1turn (TBS), lvl1-5, 100% base acc, Huge cost,
+       Very Long CD (both); Mas - any lvl (both); GM - 2*duration, Long CD (both)</li>
    <li><strong>Master Level</strong></li>
-   <li><em>Free:</em> Hypnotize (from H3C air but takes place of MMC "Enslave")</li>
-   <li>Mas - Can command enemy unit, lvl1-6 (both) 10min*lvl (RPG) 1turn (TBS); GM - any level (both) 2turn (TBS)</li>
+  <li>Mass Fear - Debuff - <em>free</em></li>
+  <li>Mas - 200%/100% Fear1/2 to all enemies in vision cone AoE, Gigantic cost, Very Long CD (both); GM -
+      200%/200%/100% Fear1/2/3 (both)</li>
+   <li>Convert - Debuff</li>
+   <li>Mas - Permanently "persuades" a target lvl1-5 enemy to join the caster's army, 100% base acc, Gigantic cost,
+       Enormous CD, max hp for enemy/stack must be at or below a threshold determined by the (both) Must have
+       enough slots available for creature to join (RPG) Must have enough provisions to join either way, can be cast on
+       neutral stacks or in-battle. If 7-slotted but creatures are the same type as 1 stack, persuaded creatures will
+       be stacked into that stack. Overrides map hostility settings, to truly prevent persuasion, Mind Immunity can
+       be used (TBS); GM - 200% base acc, Very Long CD (both)</li>
 </ul>
 <h3>Spirit Magic</h3>
+<p>Spirit is all about manipulating the metaphysical, the essence of oneself. Closing or widening the gap between
+   life & death, as well as manipulating fortune, are Spirit's forte. Strong buffing school.</p>
 <ul>
    <li><strong>Basic Level</strong></li>
-   <li><em>Free:</em> Spirit Bolt</li>
-   <li>Bas - 2+(2-3)*lvl (RPG)/5+5d2*pwr (TBS); 2+(3-4)*lvl (RPG)/15+5d2*pwr (TBS); Exp - 5+(4-6)*lvl (RPG)/20+6d2*pwr
-       (TBS); Mas - 10+(5-7)*lvl (RPG)/20+5d3*pwr (TBS); GM - 20+(7-12)*lvl (RPG)/30+5d5*lvl</li>
-   <li>Fate</li>
-   <li>Bas - 10+2%*level chance for better outcomes when cast on an ally, for worse outcomes when cast on an enemy
-       (both); Adv - 15+3%*lvl; Exp - 20+5%*lvl; Mas - Affects either all allies (both) or vision cone aoe enemies
-       (RPG)/all enemies (TBS); GM - 25+5%. Affects all allies & enemies. All levels: 10min*lvl (RPG)/1turn per
-       mastery (TBS)</li>
-   <li>Precision</li>
-   <li>Bas - For ranged attacks, Bonus to Hit Chance,1hr*lvl (RPG) eliminates range penalty 1turn*pwr (TBS); Adv -
-       Bonus Crit Chance (both); Exp - Affects all ; Mas - Strong bonus to Crit, slight bonus to Slayer% (both)
-       Eliminates castle wall penalty (TBS); GM - Guaranteed Crit, strong bonus to Slayer% (both)</li>
-   <li>Spirit Resistance</li>
+   <li>Spirit Bolt - DD - <em>free</em></li>
+   <li>Bas - Single target, Weak dmg, Narrow range, Standard CD, Small cost. (both); Adv - Medium dmg (both); Exp -
+       Short CD (both); Mas - Trivial cost (both); GM - Strong dmg (both)</li>
+   <li>Fate - Buff - <em>free</em></li>
+   <li>Bas - 10+2%*level chance for better outcomes when cast on an ally, for worse outcomes when cast on an enemy,
+       Medium cost, Standard CD (both); Adv - 15+3%*lvl; Exp - Affects either all allies or vision cone aoe enemies
+       (both); Mas - 20+5%*lvl; GM - 25+5%. Affects all allies & enemies (both) All levels: 10min*lvl (RPG)/1turn per
+       mastery (TBS). Can go above 100% because it is multiplicative on the original percentage (which is capped at
+       100%), so e.g. if a creature has a 10% chance of triggering a status, and lvl25 GM Fate is cast on that unit
+       by its hero (25 + 25*5 = 150%), then the chance is increased by 150% of 10%, or 15%, for a total chance of
+       25%.</li>
+  <li>Curse - Status</li>
+  <li>Bas - 100% chance of Curse1 to target creature, Medium cost, Long CD (both); Adv - 100%/50% Curse1/2 (both);Exp
+      - 100%/100%/25% Curse1/2/3 (both); Mas - 200%/200%/100% Curse1/2/3 (both); GM - 200% Fear3, Standard CD
+      (both) Can target the enemy hero at all levels, heroes should have a spirit resistance stat somewhere to
+      counterract.(TBS)</li>
+   <li>Spirit Resistance - buff</li>
    <li>Bas - 10+1%/lvl to res. 1hr/lvl; Adv - 15+2%/lvl to res; Exp - 20+3%/lvl to res; Mas - 40+4%; GM - 100% floor.
-       Skill lasts until rest/area change/etc.</li>
+       Semi-perm, All levels: Medium cost, Standard CD (both).</li>
    <li><strong>Advanced Level</strong></li>
-   <li><em>Free:</em> Bless</li>
-   <li>Adv - Target unit does max damage from its damage range, cures Curse1 1hr*lvl/1turn*pwr (both); Exp - Applies to
-       whole army/party (both); Mas - 10% over max, cures Curse2 (both); GM - 25% over max, cures Curse3, semi-perm
-       (both)</li>
-   <li>Heroism</li>
-   <li>Adv - 10+2% bonus spirit dmg*lvl/pwr to target unit's physical attacks, 1hr*lvl/1turn*pwr (both); Exp - Affects
-       all (both); Mas - 15+3% (both); GM - 25+5%, Semi-perm</li>
-   <li>Curse</li>
-   <li>Target unit does min damage from its damage range, cures Bless1, 1hr*lvl/1turn*pwr (both); Exp - Applies to whole
-       army/party (both); Mas - 20% under min, cures Bless2 (both); GM - 50% under min, cures Bless3 Semi-perm (both).
-       Bless/Curse all levels: will fail to counterract Curse/Bless if higher level. e.g. if attacking hero casts
-       Mas Bless on his army, defending hero cannot cast Adv or Exp Curse to any effect.</li>
+   <li>Bless - Buff - <em>free</em></li>
+   <li>Adv - Target unit does max damage from its damage range, Medium cost, Standard CD 1hr*lvl (RPG)/1turn*pwr (TBS);
+       Exp - Targets all allies, Large cost (both); Mas - 25% over max (both); GM - 50% over max, Short CD, semi-perm
+       (both). Note: this is no longer an opposite to curse that dispels it like in H3C, it is a buff that is
+       separate from & unaffected by the Curse status (they can coexist).</li>
+  <li>Precision - Buff</li>
+  <li>Adv - For ranged attacks, Bonus to Hit Chance,1hr*lvl (RPG) eliminates range penalty 1turn*pwr (TBS) Medium
+      cost, Standard CD (both); Exp - Affects all allies, Large cost (both); Mas - Medium bonus to Crit%, Slight bonus
+      to Slayer% (both) Eliminates castle wall penalty (TBS); GM - Guaranteed Crit%, Medium bonus to Slayer% (both)</li>
+  <li>Remove Curse - Heal</li>
+  <li>Adv - Heals target of Curse1, Medium cost, Standard CD (both); Exp - Heals Curse2 (both) - Heals Curse3,
+      Short CD (both); GM - Affects all allies (both)</li>
    <li><strong>Expert Level</strong></li>
-   <li><em>Free:</em> Spirit Lash</li>
-   <li>Exp - 10+(10-12)*lvl, short range only (RPG)/20+(15-20)*lvl must be on hero's half of battlefield (TBS); Mas -
-       12+(12-15)*lvl (RPG)/20+(18-25)*lvl (TBS); GM - 20+(15-20)*lvl (RPG)/40+(20-30)*lvl (TBS)</li>
-   <li>Preservation</li>
-   <li>Exp - Prevents target chara from dying for 10*lvl more hp 1hr*lvl (RPG) Prevents the first single week's base
-       growth worth of creatures in the stack from dying once per cast, leaving them at 1hp <strong>each</strong>,
-       unless  twice their hp's worth of damage is done. Example: 1 stack of 15 Pikemen at 10hp each, 14 is 1 week's
-       growth.  Can take 14*10+14*9 (266) hp without any 1 unit in the stack dying. Each of the next 14dmg all battle
-       (unless  healed) kills 1 Pikeman each. so 267 kills 1, 268 kills 2, etc. to 280. 290 kills whole stack since
-       15th not preserved; Mas - Double saving effect (both); GM - Affects entire party/army (both)</li>
-   <li>Protection from Status (name?)</li>
-   <li>Exp - Protects target unit against any lvl1/2 status condition, 1hr*lvl/1pwr*turn (both); Mas - All status
-       conditions (both); GM - Affects entire party (both)</li>
+  <li>Heroism - Buff - <em>free</em></li>
+  <li>Exp - Medium Spirit dmg added to all allies physical attacks (ranged & melee), Huge cost, Long CD (both); Mas
+      - Standard CD (both); GM - Large dmg (both).</li>
+   <li>Spirit Lash - DD/Status</li>
+   <li>Exp - Massive dmg to single target, Narrow range, Huge cost, Long CD, 100%/50% Curse1/2 (both); Mas -
+       200%/100%/50% Curse1/2/3 (both); GM - 200%/200%/100% Curse1/2/3, Standard CD (both) Short range like MM8C</li>
+   <li>Protection from Status - Buff</li>
+   <li>Exp - Protects all allied units from a fixed number of status condition inflictions. Does not remove current
+       statues, only prevents new inflictions. The pool of block points is equal to the lvl/pwr of the casting hero, and
+       each status infliction takes 1 point per level of status to block. Partial blocks reduce the severity of status
+       inflicted. E.g.: RPG Cleric casts Exp 7 Prot from Status, pool set to 7pts. During battle, Curse 1 is
+       attempted to be inflicted on the Cleric. Blocked fully, pool reduced to 6. Then Poison2 & Disease3. Both
+       blocked as well, reducing the pool, in order, to 4 then 1. Finally, another Disease3 is attempted. the
+       remaining 1 point knocks it down from Disease3 to Disease2 & it is inflicted successfully, and the buff is
+       removed. There should be indicators for all the following: roughly how many block points are left, successful
+       blocks, partial blocs & the buff disappearing. Note that blocks are computed after & do not affect % chance to
+       be applied. Block will only be attempted after a successful status roll is determined, i.e. if Fire
+       resistance/immunity causes a Burn attempt to miss, no block points will be spent (both); Mas - 2*lvl/pwr to
+       pool (both); GM - 3*lvl/pwr to pool (both).</li>
    <li><strong>Master Level</strong></li>
-   <li><em>Free:</em> Raise Dead</li>
-   <li>Mas - Raises target unit from the dead with 50+25*lvl hp. very high cost, very long cooldown. Target's body
-       must be intact (not eradicated), having Mas Body Magic on the char casting this spell allows for resurrecting
-       eradicated units (RPG)/Restores 100+50*lvl hp to a stack, resurrecting any fallen units 1hp after each
-       previous one gets full hp (see H3C Res); GM - Restores to full hp, shorter cooldown (RPG)/250+100*lvl (TBS)</li>
+  <li>Preservation - Buff - <em>free</em></li>
+  <li>Mas - Prevents target from dying for 10*lvl more hp 1hr*lvl (RPG) Prevents the first single week's base
+      growth worth of creatures in the stack from dying once per cast, leaving them at 1hp <strong>each</strong>,
+      unless twice their hp's worth of damage is done. Example: 1 stack of 15 Pikemen at 10hp each, 14 is 1 week's
+      growth. Can take 14*10+14*9 (266) hp without any 1 unit in the stack dying. Each of the next 14dmg all battle
+      (unless healed) kills 1 Pikeman each. so 267 kills 1, 268 kills 2, etc. to 280. 290 kills whole stack since
+      15th not preserved; GM - Affects all allies (both), semi-perm (RPG)</li>
+   <li>Raise Dead - Heal</li>
+   <li>Mas - Raises target formerly living, not undead unit from the dead. Gigantic cost, Enormous
+       CD. Target's body must be intact (not eradicated), eradicated bodies must be restored first with Restoration.
+       all statuses affecting target prior to death will remain until healed separately (both) Restores 50+25*lvl hp
+       (RPG) Restores 100+50*lvl hp to a stack, resurrecting any fallen units 1hp after each
+       previous one gets full hp like H3C (TBS); GM - Restores to full hp (RPG)/250+100*lvl (TBS) Very Long CD
+       (both). Res is permanent at all expertise levels in both (obviously you can die again, this means it's not
+       just until you end the battle/leave the dungeon). Can be cast on any allied unit (RPG).</li>
 </ul>
 <h3>Life Magic (formerly "Light")</h3>
 <ul>
@@ -454,8 +495,8 @@ living units killed by fire magic cannot be resurrected as undead.</p>
        vision aoe (RPG)/1hex aoe (TBS); GM - Hits all enemies (both)</li>
    <li><strong>Expert Level</strong></li>
    <li><em>Free:</em> Day of the Gods</li>
-   <li>Exp - Raises all 7 stats by 10*lvl, 1hr*lvl (RPG)/Raises 4 primary stats by 1*lvl for 1day (TBS); Mas - 20*lvl
-       (RPG)/5+1*lvl (TBS); GM - 30*lvl, Semi-perm (RPG)/2*lvl (TBS)</li>
+   <li>Exp - Raises all 7 stats by 10*lvl, 1hr*lvl (RPG)/Raises 4 primary stats by 1*lvl for 1day (TBS); Mas - 15*lvl
+       (RPG)/5+1*lvl (TBS); GM - 20*lvl, Semi-perm (RPG)/2*lvl (TBS)</li>
    <li>Hour of Power</li>
    <li>Exp - Casts Haste, Bloodlust, Stoneskin, Fate, Precision, Bless & Heroism at Exp level for 1hr*lvl (RPG)/
        Casts Exp Haste, Bloodlust & Stoneskin simultaneously, 1turn*pwr (TBS); Mas - Mas level (both)/adds Fate &
@@ -510,7 +551,7 @@ living units killed by fire magic cannot be resurrected as undead.</p>
    <li><strong>Advanced Level</strong></li>
    <li><em>Free:</em> Control Undead</li>
    <li>Adv - Takes control of an undead lvl1-3 (both) unit semi-perm (RPG) stack for 1 turn in battle. On
-       adventure map, can be used to force conscription of neutral undead(TBS); Exp - lvl1-5 (both); Mas - lvl1-6
+       adventure map, can be used to force conscription of neutral undead (TBS); Exp - lvl1-5 (both); Mas - lvl1-6
        (both) 1turn*pwr (TBS); GM - lvl1-7 (both) Perm joins army (RPG) Effect lasts on stack until the end of
        battle & stack joins your forces after the end of battle (should do dramatic animation of unit turning &
        facing the new direction) (TBS). In both RPG & TBS, this spell cannot be cast <em>at all</em> against undead

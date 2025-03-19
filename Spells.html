@@ -463,58 +463,63 @@ living units killed by fire magic cannot be resurrected as undead.</p>
        just until you end the battle/leave the dungeon). Can be cast on any allied unit (RPG).</li>
 </ul>
 <h3>Life Magic (formerly "Light")</h3>
+<p>Life imbues its living recipients with all the vim & vigor that living has to offer, and even gives life to
+   inanimate materials! The undead are less fortunate though being punished rather mercilessly by any amount of Life
+   energy.</p>
 <ul>
    <li><strong>Basic Level</strong></li>
-   <li><em>Free:</em> Life Burst (new, small Life dmg/heal)</li>
-   <li>Bas - (2-3)*lvl heal to living unit, 2*that as dmg to undead unit, no affect on unliving (RPG)/(5-10)*pwr heal
-       (TBS); Adv - (3-4)*lvl (RPG)/(7-12)*pwr (TBS); Exp - (4-6)*lvl (RPG)/(8-15)*pwr (TBS); Mas - (5-8)*lvl
-       (RPG)/(10-18)*pwr (TBS); GM - (7-12)*lvl (RPG)/(12-25)*pwr (TBS)</li>
-   <li>Turn Undead</li>
-   <li>Bas - Inflicts Fear2 on single undead stack 3min*lvl/1turn(both); Adv - Fear3 (both) ; Exp - 5min*lvl
-       (RPG)/2turn (TBS); Mas - 10min*lvl (RPG)/3turn (TBS); GM - Small vision aoe (RPG)/1hex (TBS)</li>
-   <li>Multiply Food (formerly "Create Food")</li>
-   <li>Bas - Create max(5, current food) more food; Adv - max(10, cur*2); Exp - max(15, cur*3); Mas - max(25, cur*5);
-       GM - max(50, cur*10). All RPG for now. Will see if something can be done for TBS. Initial thoughts: adding
-       food mechanic seems burdensome, ignoring spell or replacing seems to defeat cohesiveness (though ignoring is
-       better I think), maybe gives a small bonus to movepoints for the next X days?</li>
-   <li>Cure Fatigue (formerly "Cure Weakness")</li>
-   <li>Bas - Cures Fatigue1 if inflicted for 10min*lvl &lt; time (RPG)/Cures Fatigue1 (TBS); Adv - Cures Fatigue2; Exp
-       - Cures Fatigue3; Mas - Cures whole party/army; GM - 0 cost. Prevents fatigue Semi-perm.</li>
+   <li>Life Burst - DD/Heal - <em>free</em></li>
+   <li>Bas - Single target, Weak dmg as heal to Living, double as dmg to Undead, Narrow range, Standard CD, Small cost.
+       (both); Adv - Medium dmg (both); Exp - Short CD (both); Mas - Trivial cost (both); GM - Strong dmg (both)</li>
+  <li>Animate - Summon - <em>free</em></li>
+  <li>Bas - Creates a summoned unit from inanimate material. Can create Stone Gargoyles, Large cost, Long CD
+      (both) Creates 1 summon per cast, capped by summon slots (RPG) Creates 1 basic week's worth of creatures once per
+      week (TBS); Adv - Can create Obsidian Gargoyles, Beholders or Stone Golems (both); Exp - Can create Evil Eyes or
+      Iron Golems (both); Mas - Can create Gold or Crystal Golems (both); GM - Can create Genies or Efreeti (both) 2
+      basic week's worth per cast (TBS)</li>
+   <li>Turn Undead - Debuff</li>
+   <li>Bas - Causes single lvl1-3 Undead target to flee for 10min (RPG)/1turn (TBS), Medium cost, Standard CD (both);
+       Adv - lvl 1-5 (both) ; Exp - any lvl (both); Mas - small AoE (RPG)/1-hex AoE (TBS); GM - vision cone AoE
+       (both). Flee means run at max speed in straight line without attacking (RPG)/expending maximum movepoints to
+       move away from caster's troops without attacking (TBS).</li>
+   <li>Multiply Food - Travel</li>
+   <li>Bas - Create max(5, current food) more food (RPG)/5% bonus movepts to hero for today (TBS) Large cost,
+       Standard CD; Adv - max(10, cur*2) (RPG)/10% bonus move (TBS); Exp - max(15, cur*3) (RPG)/15% bonus move (TBS);
+       Mas - max(25, cur*5) (RPG)/25% bonus move (TBS); GM - max(50, cur*10) (RPG)/50% bonus move (TBS).</li>
    <li><strong>Advanced Level</strong></li>
-   <li><em>Free:</em> Animate (new, similar to Reanimate for undead from living, but makes a golem from nonliving)</li>
-   <li>Adv - Creates a Dendroid or Stone Gargoyle, max 1 animated creature in party's control at a time per char with
-       this level of Life Magic. High sp cost/long CD (RPG)/Creates 1 basic week's worth of Stone Gargoyles, 1
-       cast/week (TBS) ; Exp - Can create Beholders or Stone Golems (both); Mas - Can create Gold Golems (both) 2 max
-       units (RPG) 2 basic week's worth (TBS); GM - Can create Crystal Golems (both) 3 max units (RPG) 3 basic
-       week's worth (TBS)</li>
-   <li>Mass Resistance (name?, formerly "Day of Protection")</li>
-   <li>Adv - 15+2%/lvl to all res; Exp - 20+3%; Mas - 40+4%; GM - 50%+5% (over 100% negates any adverse). 50% floor.
-       Skill lasts until rest/area change/etc.</li>
-   <li>Destroy Undead</li>
-   <li>Adv - Deals 10*lvl dmg to target undead unit (RPG)/20*pwr (TBS); Exp - 20*lvl (RPG)/40*lvl (TBS); Mas - Small
-       vision aoe (RPG)/1hex aoe (TBS); GM - Hits all enemies (both)</li>
+  <li>Cure Fatigue - Status - <em>free</em></li>
+  <li>Adv - Heals target of Fatigue1, Medium cost, Standard CD (both); Exp - Heals Fatigue2 (both) - Heals Fatigue3,
+      Short CD (both); GM - Affects whole party/army at once (both)</li>
+   <li>Mass Resistance - Buff</li>
+   <li>Adv - Casts all 7 Resistance spells simultaneously at Adv lvl, Huge cost, Very Long CD (both); Exp - Casts
+       at Exp lvl (both); Mas - Casts at Mas lvl (both); GM - Casts at GM lvl, Long CD (both)</li>
+   <li>Destroy Undead - DD</li>
+   <li>Adv - Strong dmg to target undead unit, Narrow range, Large cost, Long CD (both); Exp - Small AoE (RPG)
+       /1-hex AoE (TBS); Mas - Vision cone AoE (both); GM - Standard CD (both).</li>
    <li><strong>Expert Level</strong></li>
-   <li><em>Free:</em> Day of the Gods</li>
-   <li>Exp - Raises all 7 stats by 10*lvl, 1hr*lvl (RPG)/Raises 4 primary stats by 1*lvl for 1day (TBS); Mas - 15*lvl
-       (RPG)/5+1*lvl (TBS); GM - 20*lvl, Semi-perm (RPG)/2*lvl (TBS)</li>
-   <li>Hour of Power</li>
+   <li>Day of the Gods - Buff - <em>free</em></li>
+   <li>Exp - Raises all 7 stats by 10*lvl, 1hr*lvl (RPG)/Raises 4 primary stats by 1*lvl for 1day (TBS) Huge cost,
+       Very Long CD (both); Mas - 15*lvl (RPG)/5+1*lvl, 3days (TBS); GM - 20*lvl, Semi-perm (RPG)/2*lvl, 1week
+       (TBS)</li>
+   <li>Hour of Power - Buff</li>
    <li>Exp - Casts Haste, Bloodlust, Stoneskin, Fate, Precision, Bless & Heroism at Exp level for 1hr*lvl (RPG)/
-       Casts Exp Haste, Bloodlust & Stoneskin simultaneously, 1turn*pwr (TBS); Mas - Mas level (both)/adds Fate &
-       Precision (TBS); GM - GM lvl, Semi-perm (both)/adds Bless & Heroism (TBS). For both, all spells are cast at
-       current expertise/lvl/pwr in Life Magic or current lvl/expertise in the associated magic school, whichever
-       is higher.</li>
-   <li>Solar Power (new, semi-replaces Sunray)</li>
-   <li>Exp - +10hp/hr regen to unit & -10% recovery time, 1hr*lvl (RPG)/lvl1-5 unit fully heals at end of every turn,
-       1turn*lvl (TBS); Mas - +20hp/hr, -20% recovery (RPG)/lvl1-7 (TBS); GM - +30hp/hr, -40% recovery time (RPG)
-       /Unit strikes twice every turn (TBS). All levels can only be cast in sunlight (daytime & outdoors).</li>
+       Casts Exp Haste, Bloodlust & Stoneskin simultaneously, 1turn*pwr (TBS) Huge cost, Very Long CD, all cast at
+       current lvl/expertise in Life Magic (both); Mas - Mas level (both)/adds Fate & Precision (TBS); GM - GM lvl,
+       Semi-perm (both)/adds Bless & Heroism (TBS).</li>
+   <li>Life Blast - DD/Heal</li>
+  <li>Exp - Strong dmg as heal to single Living target, 2*dmg to Undead, Narrow range, Huge cost, Long CD, heals
+      Fatigue1 (both); Mas - Massive dmg, heals Fatigue2 (both); GM - Standard CD, heals Fatigue3 (both)</li>
    <li><strong>Master Level</strong></li>
-   <li><em>Free:</em> Divine Intervention</li>
-   <li>Mas - Once per week, restores party to full hp & sp, removes all debuffs, cures all status conditions
-       (including death & eradication) & repairs all equipped items. 0sp cost, very long cd, +10yrs to everyone in
-       party (RPG)/Once per week, resurrects all troops that have died that day (cannot be cast in battle, includes
-       all losses like e.g. whirlpools) Costs entire sp pool. Temp stat penalty (until recast available) to casting
-       hero based on what % of max sp was used: 100-76%: none, 75-51% -1ea, 50-26%: -2ea, 25-1%: -3ea, 0%: -5ea; GM -
-       Two times per week (both) Can be set to trigger automatically on fatal blow to caster (RPG).</li>
+  <li>Overflowing Energy (name?) - Buff - <em>free</em></li>
+  <li>Mas - Large boost to living target's hp regen, 50% boost to atk spd, opposite effects on undead (neg regen/atk
+      spd hit) (both)/can res 1 bas week (TBS); GM - Huge regen, 100% atk spd (both)/can res 2 bas week (TBS).</li>
+   <li>Divine Intervention</li>
+   <li>Mas - Once per week, restores party to full hp & sp, removes all debuffs & statuses (even undispellable), cures
+       all status conditions (including death & eradication) & repairs all equipped items. Enormous cost, Tremendous
+       CD (both), +10yrs to everyone in party (RPG)/Once per week, resurrects all troops that have died that day
+       (cannot be cast in battle, includes all losses like e.g. whirlpools) Costs entire sp pool, but cast cost is
+       min necessary; GM - Two times per week (both) Can be set to trigger automatically on fatal blow to caster
+       (RPG). Not affected by Curse at any lvl (both).</li>
 </ul>
 <h3>Death Magic (formerly "Dark")</h3>
 <ul>

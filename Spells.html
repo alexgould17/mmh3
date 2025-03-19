@@ -406,7 +406,7 @@ living units killed by fire magic cannot be resurrected as undead.</p>
        25%.</li>
   <li>Curse - Status</li>
   <li>Bas - 100% chance of Curse1 to target creature, Medium cost, Long CD (both); Adv - 100%/50% Curse1/2 (both);Exp
-      - 100%/100%/25% Curse1/2/3 (both); Mas - 200%/200%/100% Curse1/2/3 (both); GM - 200% Fear3, Standard CD
+      - 100%/100%/25% Curse1/2/3 (both); Mas - 200%/200%/100% Curse1/2/3 (both); GM - 200% Curse3, Standard CD
       (both) Can target the enemy hero at all levels, heroes should have a spirit resistance stat somewhere to
       counterract.(TBS)</li>
    <li>Spirit Resistance - buff</li>
@@ -486,12 +486,15 @@ living units killed by fire magic cannot be resurrected as undead.</p>
    <li>Bas - Create max(5, current food) more food (RPG)/5% bonus movepts to hero for today (TBS) Large cost,
        Standard CD; Adv - max(10, cur*2) (RPG)/10% bonus move (TBS); Exp - max(15, cur*3) (RPG)/15% bonus move (TBS);
        Mas - max(25, cur*5) (RPG)/25% bonus move (TBS); GM - max(50, cur*10) (RPG)/50% bonus move (TBS).</li>
+  <li>Death Resistance - Buff</li>
+  <li>Bas - 10+1%/lvl to res. 1hr/lvl; Adv - 15+2%/lvl to res; Exp - 20+3%/lvl to res; Mas - 40+4%; GM - 100% floor.
+      Semi-perm, All levels: Medium cost, Standard CD (both).</li>
    <li><strong>Advanced Level</strong></li>
   <li>Cure Fatigue - Status - <em>free</em></li>
   <li>Adv - Heals target of Fatigue1, Medium cost, Standard CD (both); Exp - Heals Fatigue2 (both) - Heals Fatigue3,
       Short CD (both); GM - Affects whole party/army at once (both)</li>
    <li>Mass Resistance - Buff</li>
-   <li>Adv - Casts all 7 Resistance spells simultaneously at Adv lvl, Huge cost, Very Long CD (both); Exp - Casts
+   <li>Adv - Casts all 9 Resistance spells simultaneously at Adv lvl, Huge cost, Very Long CD (both); Exp - Casts
        at Exp lvl (both); Mas - Casts at Mas lvl (both); GM - Casts at GM lvl, Long CD (both)</li>
    <li>Destroy Undead - DD</li>
    <li>Adv - Strong dmg to target undead unit, Narrow range, Large cost, Long CD (both); Exp - Small AoE (RPG)
@@ -512,7 +515,9 @@ living units killed by fire magic cannot be resurrected as undead.</p>
    <li><strong>Master Level</strong></li>
   <li>Overflowing Energy (name?) - Buff - <em>free</em></li>
   <li>Mas - Large boost to living target's hp regen, 50% boost to atk spd, opposite effects on undead (neg regen/atk
-      spd hit) (both)/can res 1 bas week (TBS); GM - Huge regen, 100% atk spd (both)/can res 2 bas week (TBS).</li>
+      spd hit) (both)/can res 1 bas week (TBS); GM - Huge regen, 100% atk spd (both)/can res 2 bas week (TBS). All
+      levels cure any Fatigue on cast & give immunity to Fatigue/100% Death Resistance for the duration of the buff
+      (both).</li>
    <li>Divine Intervention</li>
    <li>Mas - Once per week, restores party to full hp & sp, removes all debuffs & statuses (even undispellable), cures
        all status conditions (including death & eradication) & repairs all equipped items. Enormous cost, Tremendous
@@ -522,76 +527,90 @@ living units killed by fire magic cannot be resurrected as undead.</p>
        (RPG). Not affected by Curse at any lvl (both).</li>
 </ul>
 <h3>Death Magic (formerly "Dark")</h3>
+<p>Death stands in antithesis to Life, but is at all levels intertwined with it. Concerned with the making &
+   manipulating of the undead, as well as draining life from the living.</p>
 <ul>
    <li><strong>Basic Level</strong></li>
-   <li><em>Free:</em> Reanimate</li>
+   <li>Reanimate - Summon - <em>free</em></li>
    <li>Bas - Allows raising a previously-living humanoid body into a Skeleton Warrior or Skeleton Archer (based on if
-       the unit was melee or ranged while alive) (both) Max 1+1 slot per char w/this skill level in Death Magic
-       (RPG)/Must cast after battle to res undead troops, can be set to autocast w/proper sp, 50*(lvl+1) hp maxres,
-       cannot res more than bodies are there, and will not res more hp than stack had (TBS); Adv - Allows resing
-       Zombies (both)/75*(lvl+1) (TBS); Exp - Allows resing Ghosts, beasts now count towards ghost res (both) Max
-       1+2 slots (RPG)/100*(lvl+1) (TBS); Mas - Allows resing Vampires from lvl4+ units (both) Max 1+3 slots (RPG)/
-       150*(lvl+1) (TBS); GM - Allows resing Liches from lvl5+ spellcasters/shooters (e.g. magi/cyclopses) & Bone
-       Dragons from dragons/dragon-likes (incl. Hydras, Firebirds, Dragon Turtles) (both) Max1+4 slots (RPG) 250*
-       (lvl+2) (TBS). Mechanics notes: skeles & zombies each take 1 slot, ghosts take 2, vamps take 3 & dragons
-       take 4; max 1 dragon, 2 liches/vamps per caster with that level of skill no matter how many slots. e.g.
-       party of 5, with 4 basic & 1 GM Death Magic chars, you have 1+4*1+1*4=9 slots, but only 1 has GM so max 1
+       the unit was melee or ranged while alive) (both) Must have slots avail (RPG)/Must cast after battle to res
+       undead troops, can be set to autocast w/proper sp, 50*(lvl+1) hp maxres, cannot res more than bodies are
+       there, and will not res more hp than stack had (TBS); Adv - Allows resing Zombies/Mummies from lvl3+ humanoids
+       (both)/75*(lvl+1) (TBS); Exp - Allows resing Ghosts from beasts (both) Max 100*(lvl+1) (TBS);
+       Mas - Allows resing Vampires from lvl4+ humanoids (both) Max 150*(lvl+2) (TBS); GM - Allows resing Liches from
+       lvl5+ spellcasters/shooters (e.g. magi/cyclopses) & Bone Dragons from dragons/dragon-likes (incl. Hydras,
+       Firebirds, Dragon Turtles) (both) Max 250* (lvl+2) (TBS). Mechanics notes: skeles & zombies each take 1 slot,
+       ghosts take 2, vamps/liches take 3 & dragons take 4; max 1 dragon, 2 liches/vamps per caster with that level
+       of skill no matter how many slots. e.g. you have 9 slots, but only 1 char has GM Death Magic so max 1
        dragon even though there are slots for 2. Theoretical best army in this case is 1 bone dragon, 1 lich, 1
        ghost (RPG)/res priority among dragons/liches/vamps/ghosts/zombies/skeles can be ordered in any way, ranked
        choice, searches for #1 when reanimating, fills that with all possible hp, then goes to next. Prio defaults
        to highest-level, but can be set in hero's settings at any time. Battle sites should remain for 1 week
        for Reanimating anything, beyond that remain as decayed & only available for a decreasing # of skeletons
-       (75% of max skeles 1-2wk, 50% 2-3, 25% 3-4), disappears after 1 full month (TBS)</li>
-   <li>Death Blast (counterpart to life burst, replaces Toxic Cloud)</li>
-   <li>Bas - (2-3)*lvl heal to undead unit, 2*that as dmg to living unit, no affect on unliving (RPG)/(5-10)*pwr heal
-       (TBS); Adv - (3-4)*lvl (RPG)/(7-12)*pwr (TBS); Exp - (4-6)*lvl (RPG)/(8-15)*pwr (TBS); Mas - (5-8)*lvl
-       (RPG)/(10-18)*pwr (TBS); GM - (7-12)*lvl (RPG)/(12-25)*pwr (TBS)</li>
-   <li>Pain Reflection</li>
-   <li>Bas - Target unit reflects 5+1*lvl% of melee dmg back on its attacker (both) 1hr*lvl (RPG)/1turn*pwr (TBS);
-       Adv - 10+1*lvl% (both); Exp - 10+2*lvl% (both); Mas - Affects whole party/army (both); GM - Semi-perm,
-       15+2%, reflects all dmg including ranged phys & spells (both)</li>
-   <li>Fatigue (new, inflict Fatigue status (formerly "Weakness"))</li>
-   <li>Bas - Inflicts Fatigue1 for 1hr*lvl (RPG)/1turn*pwr (TBS); Adv - Inflicts Fatigue2; Exp - Inflicts Fatigue3; Mas
-       - Inflicts on small vision aoe (RPG)/1hex aoe (TBS); GM - Inflicts on all enemies (RPG)/whole army (TBS)</li>
+       (75% of max skeles 1-2wk, 50% 2-3, 25% 3-4), disappears after 1 full month or with casting of deformation
+       (TBS).</li>
+   <li>Death Cloud - DD/Status (Mas+ only) - <em>free</em></li>
+   <li>Bas - Single target, Weak dmg to Living, double as heal to Undead, Wide range, Standard CD, Small cost.
+       (both); Adv - Medium dmg; Exp - Short CD; Mas - 20% chance Fatigue1; GM - Strong dmg</li>
+   <li>Pain Reflection - Buff</li>
+   <li>Bas - Target unit reflects 5+1*lvl% of melee dmg back on its attacker, Large cost, Long CD (both) 1hr*lvl
+       (RPG)/1turn*pwr (TBS); Adv - 10+1*lvl% (both); Exp - Affects all allies, 4/5ths cost (both); Mas - 10+2*lvl%
+       (both); GM - Semi-perm, reflects all dmg including ranged phys & spells (both). Damage reflected back before
+       reductions as type it came in as.</li>
+   <li>Fatigue - Status</li>
+   <li>Bas - 100% chance of Fatigue1 to target creature, Medium cost, Long CD (both); Adv - 100%/50% Fatigue1/2
+       (both);Exp - 100%/100%/25% Fatigue1/2/3 (both); Mas - 200%/200%/100% Fatigue1/2/3 (both); GM - 200% Fatigue3,
+       Standard CD (both)</li>
+  <li>Life Resistance - Buff</li>
+  <li>Bas - 10+1%/lvl to res. 1hr/lvl; Adv - 15+2%/lvl to res; Exp - 20+3%/lvl to res; Mas - 40+4%; GM - 100% floor.
+      Semi-perm, All levels: Medium cost, Standard CD (both).</li>
    <li><strong>Advanced Level</strong></li>
-   <li><em>Free:</em> Control Undead</li>
-   <li>Adv - Takes control of an undead lvl1-3 (both) unit semi-perm (RPG) stack for 1 turn in battle. On
-       adventure map, can be used to force conscription of neutral undead (TBS); Exp - lvl1-5 (both); Mas - lvl1-6
-       (both) 1turn*pwr (TBS); GM - lvl1-7 (both) Perm joins army (RPG) Effect lasts on stack until the end of
+   <li>Control Undead - Debuff - <em>free</em></li>
+   <li>Adv - Takes control of an undead lvl1-3, Large cost, Long CD (both) unit semi-perm (RPG) stack for 1 turn in
+       battle. On adventure map, can be used to force conscription of neutral undead (TBS); Exp - lvl1-5 (both); Mas
+       - lvl1-6 (both) 1turn*pwr (TBS); GM - lvl1-7 (both) Perm joins army (RPG) Effect lasts on stack until the end of
        battle & stack joins your forces after the end of battle (should do dramatic animation of unit turning &
-       facing the new direction) (TBS). In both RPG & TBS, this spell cannot be cast <em>at all</em> against undead
-       controlled by a same-expertise or higher magic wielder, only lower. Neutral/roaming undead will be marked as
-       0 control, allowing them to be controlled by anyone.</li>
-   <li>Vampirism (name?, gives lifedrain to dmg output temporarily)</li>
-   <li>Adv - All dmg done by user drains 5+1*(lvl/pwr)% of dmg done (rounded down, floor 1/hit) from a living target &
+       facing the new direction) (TBS). Spell cannot be cast <em>at all</em> against undead controlled by a
+       same-expertise or higher magic wielder, only lower. Neutral/roaming undead will be marked as 0 control,
+       allowing them to be controlled by anyone (both) Must have slots available to cast at all (RPG) Can cast
+       without available provisions, but casting at GM in-battle without proper provisions will cause the stack to
+       not join the caster's army after battle & instead just disappear(?) or maybe remain as a friendly creature
+       stack guarding the battlefield (TBS).</li>
+   <li>Vampirism - Buff</li>
+   <li>Adv - All dmg done by user drains 5+1*(lvl/pwr)% of dmg done (rounded down, floor 1hp/hit) from a living target &
        restores that hp to user (both); Exp - 7+2*(lvl/pwr)% (both); Mas - 10+3*(lvl/pwr)% (both); GM -
-       15+4*(lvl/pwr)%, affects whole party/army (both). Can be cast on living or undead for buff, but can only
+       10+4*(lvl/pwr)%, affects whole party/army (both). Can be cast on living or undead for buff, but can only
        drain life from the living in either case.</li>
-   <li>Death Ripple</li>
-   <li>Adv - 5*lvl (RPG)/10*pwr (TBS) dmg to all living creatures (both); Exp - 7*lvl (RPG)/14*pwr (TBS); Mas -
-       10*lvl (RPG)/20*pwr (TBS); GM - 15*lvl (RPG)/30*pwr (TBS)</li>
+   <li>Death Ripple - DD</li>
+   <li>Adv - Weak dmg to all Living enemies in vision cone AoE, Wide range, Large cost, Long CD; Exp - Medium dmg;
+       Mas - Standard CD; GM - Short CD</li>
    <li><strong>Expert Level</strong></li>
-   <li><em>Free:</em> Pestilence</li>
-   <li>Exp - -25hp/hr regen to target living unit, does not count as damage for reflection, etc. purposes, but units
-       succumbing to negative regen will count as killed by caster, 1hr*lvl (RPG)/target stack takes 10*pwr dmg per
-       turn, 1turn*lvl (TBS) inflicts Disease1 (both); Mas - -50hp/hr (RPG)/20*pwr dmg/turn (TBS) Disease2 (both); GM
-       - -100hp/hr (RPG)/30*pwr dmg/turn (TBS) Disease3 (both) For all TBS levels, dmg inflicted by this spell
-       directly adds to the res hp pool for Reanimate.</li>
-   <li>Time of Curses (name?, new, counterpart to Hour of Power</li>
+   <li>Pestilence - Debuff - <em>free</em></li>
+   <li>Exp - Weak dmg as negative regen to all living units in vision cone AoE, does not count as damage for
+       reflection, etc. purposes, but units succumbing to negative regen will count as killed by caster, buff lasts for
+       1hr*lvl, units that die with this buff can be Reanimated for free (RPG)/1turn*lvl, dmg inflicted adds directly
+       to res pool for post-battle Reanimate cast (TBS), 50% Fatigue1, Huge cost, Very Long CD (both); Mas -
+       100%/50% Fatigue1/2 (both); GM - Medium dmg, 200%/100%/25% Fatigue1/2/3 (both) Negative regen adds directly to
+       creature's own regen & ticks accordingly (RPG)/Applies at end of turn as non-reflect dmg as long as debuff is
+       still up (TBS)</li>
+   <li>Hour of Weakness - Debuff</li>
    <li>Exp - Casts Curse, Fate, Fear & Slow on all enemies, dispels Stoneskin, Bloodlust, Precision & Heroism
-       (RPG)/Casts Slow, Curse & Fate on all enemies (TBS); Mas - Additionally casts Fear & dispels Stoneskin,
-       Bloodlust & Precision (TBS); GM - Semi-perm (both) Additionally dispels Heroism & casts Exp Pestilence
-       (modified 5*pwr/turn dmg) on all living creatures (TBS)</li>
-   <li>Day of Death (name?, new, counterpart to Day of the Gods)</li>
-   <li>Exp - Lowers enemy max hp, final dmg & extends cd time by 5+2*lvl%, 10min*lvl (RPG)/Lowers 4 primary stats on
-       enemy by 1*lvl for 1day (TBS); Mas - 10+2*lvl% (RPG)/5+1*lvl (TBS); GM - 10+3*lvl%, Semi-perm (RPG)/2*lvl
-       (TBS)</li>
+       (RPG)/Casts Slow, Curse & Fate on all enemies (TBS) at current expertise/lvl in Death Magic, Huge cost, Very
+       Long CD; Mas - Additionally casts Fear & dispels Stoneskin, Bloodlust & Precision (TBS); GM - Semi-perm (both),
+       additionally dispels Heroism (TBS). GM will cast Fate at GM level but only the negative effect on enemies,
+       not on allies as well (both).</li>
+   <li>Day of the Devil - Debuff</li>
+   <li>Exp - Lowers enemy max hp, final dmg & extends cd time by 5+2*lvl%, 1hr*lvl (RPG)/Lowers 4 primary stats on
+       enemy by 1*lvl for 1day (TBS), Huge cost, Very Long CD; Mas - 10+2*lvl% (RPG)/5+1*lvl, 3days (TBS); GM -
+       10+3*lvl%, Semi-perm (RPG)/2*lvl, 1 week (TBS)</li>
    <li><strong>Master Level</strong></li>
-   <li><em>Free:</em> Souldrinker</li>
-   <li>Mas - Deals Exp Death Blast dmg to all living enemies in aoe (both) heals living/undead party members for that
-       amount of hp, spread evenly over each, very long cd (RPG) heals & resurrects undead army units for 25% of damage
-       done, using reanimate priority, 1 per battle (TBS); GM - Mas Death Blast dmg (both) Long cd (RPG)/2 per battle
-       (TBS)</li>
+  <li>Death Ray - DD/Status - <em>free</em></li>
+  <li>Mas - Massive dmg to single Living target/heals Undead for same amount, Wide range, Huge cost, Long CD, 100%
+      Fatigue1 (both); GM - Standard CD, 200%/100% Fatigue1/2 (both).</li>
+   <li>Souldrinker - DD/Heal</li>
+   <li>Mas - Strong dmg to all Living units in vision cone AoE, 50% of total dmg done heals all Living/Undead allies,
+       Wide range, Tremendous cost, Enormous CD (both) can res any undead in summon army (RPG)/can res 1 bas wk worth
+       of undead troops per stack (TBS); GM - 100% of dmg heals (both) can res 2 bas wk worth (TBS).</li>
 </ul>
 <h2>Role-Playing Game Mechanics</h2>
 <h2>Turn-Based Game Mechanics</h2>

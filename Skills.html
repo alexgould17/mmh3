@@ -111,10 +111,24 @@
   <li>Merchant - Per ONLY, scaling: Basic-30, Adv-50, Exp-100, Mas-200, GM-300</li>
   <li>Perception - Acc main / Lck aux</li>
   <li>Regeneration - End main / Lck aux</li>
-  <li>Repair Item - Mgt main / Lck aux</li>
+  <li>Smithing (replaces repair, associated with all weapon/armor crafting & repairs) - Mgt main / Lck aux</li>
 </ul>
 <h2>Turn-Based Game Mechanics</h2>
+<p>Heroes can have 4 types of specialties: 1. A skill, which hardlocks that skill at Adv level into their skillset,
+   and gives a 4th starting point to be apportioned within class rules, 2. A spell, which makes permanently
+   available that spell in that hero's spellbook, and increases the effectiveness of that spell, 3. A creature
+   type, which gives all creatures of that type under a hero's control bonus stats (say +1 spd/+1 atk/+1 def & an
+   additional +1 to either atk or def), or 4. A resource, which provides the hero's team with additional income of
+   that resource. Should stay away from the primary precious resource for that town, e.g. don't put a
+   mercury-producing hero in Inferno, but the secondary precious resource should be preferred, e.g. putting a
+   sulfur-producing hero in Inferno, as it uses plenty of sulfur as well, is a good fit, rather than say gems, which
+   are barely used at all. Additionally, resource-specialties should be locked out of random hero generation to
+   prevent economic shenanigans by the player, and all resource-specialty heroes should have lore that includes the
+   reason for the resource generation (e.g. hero's family comes from a crystal-rich area & sends crystal to help their
+   efforts, or hero is a proficient accountant, allowing them to increase the gold generation, etc.)</p>
 <h3>Primary Skills</h3>
+<p>6 starting, skilled by player on level up or creation (unless preset), subject to certain class-based
+   conditions. Allow 0 in pwr & know for magicless heroes.</p>
 <ul>
   <li>Attack (largely works the same as H3C)</li>
   <li>Defense (largely works the same as H3C)</li>
@@ -122,6 +136,7 @@
   <li>Knowledge (somewhat different)</li>
 </ul>
 <h3>Secondary Skills</h3>
+<p>Each hero starts with 3 skill points, that can be spread out as the </p>
 <ul>
   <li>Will now scale as Basic - Advanced - Expert - Master - Grandmaster to be cohesive with RPG</li>
   <li>Basic must be learned at a castle in the appropriate building, at an adventure map scholar (think H3C Witch Hut)
@@ -199,10 +214,14 @@
       chance to learn any Advanced spell cast, 50% Expert; Expert - 100% chance to learn any Expert spell cast, 25%
       Master; Master - 100% chance to learn any Master spell cast, 10% chance to counter any spell (cannot learn a
       countered spell); Grandmaster - 25% chance to counter any spell cast. For all levels: cannot learn a spell
-      from a magic discipline not already learned.</li>
+      from a magic discipline not already learned, but can learn a spell that's higher than the proficiency currently
+      learned in that school as long as it's at or below the proficiency level of the Eagle Eye skill. E.g. Hero A
+      has Adv Fire Magic & Exp Eagle Eye, Hero B casts Inferno then Incinerate. Hero A learns Inferno from Eagle Eye
+      guaranteed (Exp spell, 100% chance from Exp EE), despite not having Exp Fire Magic. But the 25% chance of
+      learning Incinerate from EE fails because it is above both the EE & Fire Magic proficiency.</li>
   <li>Intelligence: Basic - 50% bonus to spell points; Advanced - 100% bonus to spell points; Expert - 200% bonus to
       spell points; Master - 300% bonus to spell points, 25% reduced casting cost for all spells; Grandmaster -
-      400% bonus to spell points, 50% reduced spell cost, can cast limited spells an additional time per turn.</li>
+      400% bonus to spell points, 50% reduced spell cost, additional cast slot for TBS</li>
   <li>Mysticism: Basic - +50% sp regen/day; Advanced - +100% sp regen/day; Expert - +150% sp regen/day; Master -
       +250% sp regen/day. Immune to mana drain/absorption/dampening; Grandmaster - +400% sp regen/day.
       Regenerate the cost of the first cast spell after every battle. When garrisoned, regenerate spell points
@@ -214,7 +233,7 @@
   <li>Scholar: Basic - Teach any Basic or Advanced spells to another hero; Advanced - Teach Expert Spells; Expert -
       Teach Master spells; Master - Reduce knowledge requirement by 2 for taught spells, can teach basic spells to a
       hero that doesn't know that magic discipline; Grandmaster - Eliminate knowledge requirement for taught spells.
-      Can teach up to advanced spells to a hero that does not know a magic discipline.</li>
+      Can teach up to Advanced spells to a hero that does not know a magic discipline.</li>
   <li>Sorcery: Basic - +10% dmg to direct damage spells; Advanced - +20% DD dmg; Expert - +30% DD dmg; Master - +50%
       DD dmg. -10% DD dmg taken by own troops; Grandmaster - +100% DD dmg. 25% DD dmg reduction to own troops.</li>
   <li><s>Wisdom</s> (absorbed into the knowledge stat)</li>

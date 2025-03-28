@@ -10,8 +10,8 @@
 <h3>Primary Stats</h3>
 <h4>Thresholds</h4>
 <p>Soft floor is 0, soft ceiling is 500. Anything above that is padding against temp reduction. General Thresholds
-   for learning/upgrading skills: Basic - 20 stat / Advanced - 30 stat & 4 lvl / Expert - 50 stat & 7 lvl /
-   Master - 150 (main) or 100 (aux) stat & 10 lvl / Grandmaster - 250 (main) or 150 (aux) stat & 15 lvl.</p>
+   for learning/upgrading skills: Basic - 20 main/15 aux & starts at lvl 1, Advanced - 30 main/20 aux & lvl 4, Expert -
+   50 main/40 aux & lvl 7, Master - 100 main/70 aux stat & lvl 10, Grandmaster - 200 main/150 aux stat & lvl 15.</p>
 <table>
   <tr><th>Old +-</th><th>Old Val</th><th>New +-</th><th>New Val</th></tr>
   <tr><td>-6</td><td>0</td><td>n/a</td><td>n/a</td></tr>
@@ -45,13 +45,13 @@
   <tr><td>30</td><td>500</td><td>500</td><td>500</td></tr>
 </table>
 <ul>
-  <li>Might - Physical strength. Affects physical atk dmg, what weapons melee can be equipped & </li>
-  <li>Endurance - Physical stamina. Affects hit points, what armor can be equipped & </li>
+  <li>Might - Physical strength. Affects physical atk dmg, what weapons melee can be equipped without penalty.</li>
+  <li>Endurance - Physical stamina. Affects hit points, what armor can be equipped without penalty.</li>
   <li>Speed - Quickness in performing any tasks. Affects party movement speed & all recovery times.</li>
   <li>Accuracy - Precision in performing any tasks. Affects physical hit chance, what bow can be equipped.</li>
   <li>Intellect - Competency in thinking. Affects spell points & elemental magical prowess.</li>
   <li>Personality - Personal charm. Affects self magical prowess & enemy dispensation.</li>
-  <li>Luck - Affects everything but especially Critical Hits</li>
+  <li>Luck - Affects many things but especially Critical Hits</li>
 </ul>
 <h2>Secondary Skills</h2>
 <ul>
@@ -75,7 +75,7 @@
   <li>Spear - Mgt main / Acc main</li>
   <li>Staff - Acc main / Spd aux</li>
   <li>Sword - Mgt main / Spd main</li>
-  <li>Wand - Int main/Per main</li>
+  <li>Wand - Int main/Per aux</li>
   <li>Unarmed - Mgt main / End main</li>
   <li>Armsmaster - Spd main / Mgt aux</li>
 </ul>
@@ -97,8 +97,8 @@
   <li>Body - Per main / End aux</li>
   <li>Mind - Per main / Int aux</li>
   <li>Spirit - Per main / Acc</li>
-  <li>Life - Int/Per ONLY, scaling: Basic-50, Adv-100, Exp-150, Mas-250, GM-400</li>
-  <li>Death - Int/Per ONLY, scaling: Basic-50, Adv-100, Exp-150, Mas-250, GM-400</li>
+  <li>Life - Per Main / Int aux</li>
+  <li>Death - Int Main / Per aux</li>
 </ul>
 <h4>Miscellaneous Skills</h4>
 <ul>
@@ -145,10 +145,10 @@
       travelling with scholars to fulfill this).</li>
   <li>Battle skills get learned at Blacksmith, Magic skills get learned at Mage Guilds & Other get learned at
       Marketplace.</li>
-  <li>No more RNG-based secondary skills. Experience, level & primary skills (Atk/Def for Battle, Pwr/Knw for
-      Magic) will determine how many secondary skills & to what proficiency a hero can learn.</li>
+  <li>No more RNG-based secondary skill learning/upgrading. Experience, level & primary skills (Atk/Def for Battle,
+      Pwr/Knw for Magic) will determine how many secondary skills & to what proficiency a hero can learn.</li>
   <li>Generally, Grandmastery of skills should not be able to be learned from the castle, but from an outside
-      scholar. Each castle should have 1-2 available, thematically appropriate, once a Metropolis is built.</li>
+      scholar. Each castle should have a few available, thematically appropriate, once a Metropolis is built.</li>
   <li>Level 1 Heroes should start with 3 skills thematically appropriate to their type, e.g. Death Knights should
       have Death Magic along with a battle skill.</li>
 </ul>
@@ -159,7 +159,7 @@
       penalty; Grandmaster - +50% dmg to all ranged atks, guaranteed Critical Hit, ranged units can shoot from
       point-blank range</li>
   <li>Armorer: Basic - 5% all incoming dmg reduction; Advanced - 10% all incoming dmg reduction; Expert - 15% all
-      incoming dmg reduction; Master - 20% all incoming dmg reduction. Last level 1-4 creature on a stack will
+      incoming dmg reduction; Master - 20% all incoming dmg reduction. Last level 1-5 creature on a stack will
       survive a lethal hit 1 time per round; Grandmaster - 30% all incoming damage reduction. Last creature of any
       level will survive a lethal hit once per round. Example: gnolls have 5hp per unit. if they take a 13 damage
       hit, normally 2 will die. Master/GM Armorer will allow only 1 to die from that 1 hit (unless it's the last of
